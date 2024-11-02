@@ -1,0 +1,90 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light background color */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+}
+h2 {
+    color: #555;
+}
+form {
+    margin-bottom: 20px;
+}
+textarea {
+    width: 100%;
+    height: 100px;
+}
+.post {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.post h3 {
+    margin: 0;
+}
+.post small {
+    color: #fffafa;
+}
+
+.full-post {
+    background-color: #e8efef;
+    /* background-color: #1f386e; */
+    padding: 1rem 2rem;
+    box-shadow: 1px 1px 2px black;
+}
+
+
+.admin-post-container {
+    margin: 0;
+    padding: .1rem;
+}
+/* ADMIN SECOND STYLE WITH JAVASCRIPT  */
+header {
+    background: #4a90e2; /* Header background color */
+    color: #ffffff; /* Header text color */
+    padding: 2px;
+    text-align: center;
+}
+header h1 {
+    color: #f9f5f3;
+}
+
+
+button {
+    background-color: #e94e77; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+main {
+    padding: .1rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 20px;
+    background: #ffffff; /* Section background color */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #4a90e2; /* Footer background color */
+    color: #ffffff; /* Footer text color */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+

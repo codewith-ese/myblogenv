@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="statics/admin-styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='/admin-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='/admin-styles-large.css')}}">
+    <script src="scripts/admin-script.js" defer></script>
+
+    <!--<title>{{ post['title'] }}</title>-->
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <main>
+        <!--<button id="logoutBtn">Logout</button>-->
+        <div class="admin-post-container">
+            <div class="full-post">
+                <h1>{{ post['title'] }}</h1>
+                <p>{{ post['content'] }}</p>
+                <small>Posted by: {{ post['author'] }} on {{ post['created_at'] }}</small>
+            
+                {% if post['image'] %}
+                <div>
+                    <h3>Image:</h3>
+                    <img src="{{ url_for('static', filename='uploads/images/' + post['image']) }}" alt="Post Image" style="max-width: 100%; height: auto;">
+                </div>
+                {% endif %}
+            
+                <h2>Comments</h2>
+                {% for comment in comments %}
+                <div>
+                    <strong>{{ comment['author'] }}</strong> ({{ comment['email'] }}) - {{ comment['created_at'] }}:
+                    <p>{{ comment['content'] }}</p>
+                </div>
+                {% endfor %}
+            
+                <form action="" method="post">
+                    <input type="text" name="author" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="content" placeholder="Your Comment" required></textarea>
+                    <button type="submit">Submit Comment</button>
+                </form>
+            
+                <a href="/">Back to Home</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> Monday Eseinone - Blog Admin</p>
+    </footer>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post['title'] }}</title>
+</head>
+<body>
+    <h1>{{ post['title'] }}</h1>
+    <p>{{ post['content'] }}</p>
+    <small>Posted on: {{ post['created_at'] }}</small>
+    <hr>
+    
+    <h2>Comments</h2>
+    <form action="" method="post">
+        <input type="text" name="author" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required> 
+        <textarea name="content" placeholder="Your Comment" required></textarea>
+        <button type="submit">Submit Comment</button>
+    </form>
+    
+
+    <h3>All Comments:</h3>
+    {% for comment in comments %}
+        <div>
+
+            <h1>{{ post['title'] }}</h1>
+            <p>{{ post['content'] }}</p>
+            <small>Posted by: {{ post['author'] }} on {{ post['created_at'] }}</small> 
+            <hr>
+        </div>
+    {% endfor %}
+    
+    <a href="/">Back to Home</a>
+</body>
+</html>-->

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="styles/admin-styles.css">
+    <script src="scripts/admin-script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <button id="logoutBtn">Logout</button>
+    </header>
+
+    <main>
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <p>Total Posts: <span id="postCount">0</span></p>
+            <p>Total Comments: <span id="commentCount">0</span></p>
+        </section>
+
+        <section id="postManagement">
+            <h2>Manage Posts</h2>
+            <button id="addPostBtn">Add New Post</button>
+            <div id="postsList"></div>
+        </section>
+
+        <section id="commentsManagement">
+            <h2>Manage Comments</h2>
+            <div id="commentsList"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> My Blog Admin</p>
+    </footer>
+
+   
+</body>
+</html>
