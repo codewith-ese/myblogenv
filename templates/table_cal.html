@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blog about the Marble Cost Estimator project, featuring tips and insights.">
+    <meta name="description" content="Eseinone Blog 2024">
     <meta name="author" content="Monday Erirore Eseinone">
-    <title>Marble Cost Estimator</title>
+    <title>Table Calculate</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename ='styles/blog-styles.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename ='styles/mabel-styles.css')}}">
@@ -16,7 +16,7 @@
 
     <script src="static/scripts/nav.js" defer></script>
     <script src="static/scripts/mabel-scripts.js" defer></script>
-    <script src="static/scripts/image-slide.js" defer></script>
+    <script src="static/scripts/table-scripts.js" defer></script>
     <script src="static/scripts/blog-comment.js" defer></script>
     <script src="static/scripts/get-date.js" defer></script>
     <script src="static/scripts/readmore.js" defer></script>
@@ -36,30 +36,25 @@
     <main>
         <div class="form-grid">
             <div class="container">
-                <h1>Enter the measurements of your marble in the form below. ⬇️</h1>
-                <form id="marbleForm" class="mf1">
+                <h1>Enter the size of your table or stool below. ⬇️</h1>
+                <form id="tableForm" class="mf2">
                     <label for="projectName">Project Name:</label>
                     <input type="text" id="projectName" required>
                     <br><br>
-                    
-                    <!-- <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" required>
-                    <br><br> -->
-                    
-                    <label for="marblePrice">Price per square meter:</label>
-                    <input type="number" id="marblePrice" required>
+
+                    <h2>Measurements</h2>
+                    <label for="tableLenght">Stool Length (cm):</label>
+                    <input type="number" id="tableLenght" required>
                     <br><br>
         
-                    <h2>Measurements</h2>
-                    <label for="length">Length (m):</label>
-                    <input type="number" id="length" required>
+                    <label for="tableWidth">Stool Width (cm):</label>
+                    <input type="number" id="tableWidth" required>
                     <br><br>
     
-                    <label for="width">Width (m):</label>
-                    <input type="number" id="width" required>
+                    <label for="tablehight">Stool Height (cm):</label>
+                    <input type="number" id="tablehight" required>
                     <br><br>
                     
-                    <!-- <button type="button" id="addMeasurement">Add Measurement</button> -->
                     <button type="submit">Calculate Total Cost</button>
                 </form>
             </div>
@@ -67,37 +62,18 @@
                 <div id="result-display" class="result-class">
                     <h2>Results</h2>
                     <div id="namedemo">Project Name Will Show here</div>
-                    <div id="total">00.0</div>
-                    <div id="pricedemo">00.0</div>
+                    <div id="tableTop">Table Top</div>
+                    <div id="tableLegs">Table Legs</div>
+                    <div id="tableConnL">Connections</div>
+                    <div id="tableConnS">Connnections</div>
                     <div id="date">Date</div>
-                    <div id="mabelList">List</div>
-                    <div id="listCount">Count</div>
-                    <div id="author">Created by EME</div>
+                    <br>
+                    <hr>
+                    <div id="author">Created by EME </div> 
                 </div>
-                <button id="printResultsButton">Print Marble Results</button>
-
+                <button id="printResultsButton">Print Results</button>
             </div>
         </div>
-        <div class="small-blog-display">
-            <!-- BLOG DISPLAY STARTS HERE -->
-            <h2>Recent Posts</h2>
-            {% for post in posts %}
-            <div class="post-blog">
-                <h3><a href="/post/{{ post['id'] }}">{{ post['title'] }}</a></h3>
-                <p>{{ post['content'][:100] }}...</p>
-                <small>Posted by: {{ post['author'] }} on {{ post['created_at'] }}</small>
-
-                {% if post['image'] %}
-                <div>
-                    <h4>Image:</h4>
-                    <img src="{{ url_for('static', filename='uploads/images/' + post['image']) }}" alt="Post Image" style="max-width: 100%; height: auto;">
-                </div>
-                {% endif %}
-                <hr>
-            </div>
-            {% endfor %}
-        </div>
-
     </main>
     <footer>
         <p id="year"></p> 
@@ -105,5 +81,5 @@
     </footer>
 
 
-</body>
-</html>
+
+

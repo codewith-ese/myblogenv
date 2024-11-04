@@ -245,7 +245,7 @@ button:hover {
     color: wheat;
 }
 
-#namedemo, #total, #pricedemo, #date,
+#namedemo, #total, #pricedemo, #date, #mabelList, #listCount,
 #materialslist, #tableTop, #tableLegs,
 #boardPricedemo, #tableConnL, #tableConnS
 {
@@ -264,7 +264,7 @@ button:hover {
 }
 
 #total,
-#pricedemo, #date,
+#pricedemo, #date, #mabelList, #listCount,
 #materialslist, 
 #tableTop, #tableLegs,
 #boardPricedemo,  

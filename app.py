@@ -19,6 +19,14 @@ def index():
     conn.close()
     return render_template('index.html', posts=posts)
 
+@app.route('/admin')
+def addmin():
+    conn = get_db_connection()
+    posts = conn.execute('SELECT * FROM posts ORDER BY created_at DESC').fetchall()
+    conn.close()
+    return render_template('admin.html', posts=posts)
+
+
 @app.route('/post/<int:post_id>', methods=['GET', 'POST'])
 def post(post_id):
     conn = get_db_connection()
@@ -63,6 +71,21 @@ def blogpost():
     posts = conn.execute('SELECT * FROM posts ORDER BY created_at DESC').fetchall()
     conn.close()
     return render_template('blogpost.html', posts=posts)
+
+# new wood calculator route page 
+@app.route('/wood_calculator')
+def wood_calculator():
+    # conn = get_db_connection()
+    # posts = conn.execute('SELECT * FROM posts ORDER BY created_at DESC').fetchall()
+    # conn.close()
+    return render_template('wood_calculator.html')
+
+@app.route('/table_cal')
+def table_cal():
+    # conn = get_db_connection()
+    # posts = conn.execute('SELECT * FROM posts ORDER BY created_at DESC').fetchall()
+    # conn.close()
+    return render_template('table_cal.html')
 
 if __name__ == '__main__':
     # Ensure the upload directory exists

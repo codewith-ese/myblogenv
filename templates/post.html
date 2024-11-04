@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Eseinone Blog 2024">
+    <meta name="description" content="Eseinone Blog 2024">
     <meta name="author" content="Monday Erirore Eseinone">
     <title>gggg</title>
 
@@ -30,15 +28,15 @@
         <h1>Marble Cost Estimator Blog</h1>
         <button type="button" id="menu"></button>
         <nav class="navigation">
-            <a href="index.html" class="active">Home</a>
-            <a href="wood-calculator.html">Wood</a>
-            <a href="table-cal.html">Table Calculate</a>
-            <a href="blog.html">Blog</a>
+            <a href="{{ url_for('index')}}" class="active">Home</a>
+            <a href="{{ url_for('wood_calculator')}}">Wood</a>
+            <a href="{{ url_for('table_cal')}}">Table Calculate</a>
+            <a href="{{ url_for('blogpost')}}"> Blog</a>
         </nav>
     </header>
     <main>
         <!--<button id="logoutBtn">Logout</button>-->
-        <div class="admin-post-container">
+        <div class="post-view-container">
             <div class="full-post">
                 <h1>{{ post['title'] }}</h1>
                 <p>{{ post['content'] }}</p>
@@ -47,7 +45,7 @@
                 {% if post['image'] %}
                 <div>
                     <h3>Image:</h3>
-                    <img src="{{ url_for('static', filename='uploads/images/' + post['image']) }}" alt="Post Image" style="max-width: 100%; height: auto;">
+                    <img src="{{ url_for('static', filename='uploads/images/' + post['image']) }}" alt="Post Image" style="max-width: 400px; height: auto;">
                 </div>
                 {% endif %}
             

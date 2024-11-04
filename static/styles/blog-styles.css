@@ -49,7 +49,7 @@ article {
 }
 
 .post img {
-    width: 100%;
+    max-width: 500px;
 }
 
 .post h2 {
@@ -67,31 +67,68 @@ article {
     padding: 1rem;
 }
 
-
-
  
 .full-post {
     background-color: #e8efef;
     padding: .8rem 2rem;
     box-shadow: 1px 1px 2px black;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 2rem auto;
 }
 
-.post-full img {
-    width: 30%;
-    float: left;
+.full-post img {
+    width: 100%;
+    height: auto;
+    padding: 1rem 2rem;
+    margin: auto;
+  
+}
+
+.post-view-container {
+    padding: 0px;
+    margin: 1rem auto;
+}
+.post-blog img {
+    width: 300px;
+    margin: auto;
     padding: 1rem;
 }
 
-.post-full h2 {
+.post-blog h2 {
     padding: .5rem 1rem;
     line-height: 1.2;
 }
-.post-full p {
+.post-blog p {
     padding: .1rem 1rem;
     line-height: 1.2;
 }
+
+.small-blog-display  {
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+    padding: 1rem;
+}
+.small-blog-display img {
+    width: 100px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.small-blog-display h2 {
+    padding: .5rem 1rem;
+    line-height: 1.2;
+}
+.small-blog-display p {
+    padding: .1rem 1rem;
+    line-height: 1.2;
+}
+
+.small-blog-display small {
+    color: red;
+    font-size: small;
+}
+
 
 .sidebar {
     flex: 1;
@@ -202,8 +239,6 @@ textarea {
 }
 
 
-
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .content-container {
@@ -232,7 +267,7 @@ textarea {
     }
  
    .post img {
-        width: 100%;
+        width: 400px;
     }
 
     .post p {
@@ -242,10 +277,16 @@ textarea {
         color: red;
       
     }
-    .post-full {
+    .post-blog {
         background-color: aliceblue;
         width: 100%;
-        /* max-width: 500px; */
+         max-width: 500px; 
+        
+    }
+    .small-blog-display {
+        background-color: aliceblue;
+        width: 100%;
+         max-width: 500px; 
         
     }
     .article-content-full  {
@@ -258,11 +299,15 @@ textarea {
         box-shadow: 1px 1px 2px  rgba(0, 0, 0, 0.353);
         padding: 1rem;    
     }
+    .post-view-container {
+        margin: 1rem auto;
+    }
 
     .full-post img {
         width: 100%;
+        max-width: 500px;
         height: auto;
-        padding: 2rem;
+        padding: 1rem .1rem;
       
     }
     small {
