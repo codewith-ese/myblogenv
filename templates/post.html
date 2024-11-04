@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="statics/admin-styles.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename ='/admin-styles.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename ='/admin-styles-large.css')}}">
+    <meta name="description"
+        content="Eseinone Blog 2024">
+    <meta name="author" content="Monday Erirore Eseinone">
+    <title>gggg</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/blog-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/mabel-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/mabel-large-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/image-slide.css')}}">
     <script src="scripts/admin-script.js" defer></script>
+
+
+    <script src="static/scripts/nav.js" defer></script>
+    <script src="static/scripts/mabel-scripts.js" defer></script>
+    <!--<script src="static/scripts/image-slide.js" defer></script>-->
+    <script src="static/scripts/blog-comment.js" defer></script>
+    <script src="static/scripts/get-date.js" defer></script>
+    <script src="static/scripts/readmore.js" defer></script>
 
     <!--<title>{{ post['title'] }}</title>-->
 </head>
 <body>
     <header>
-        <h1>Admin Dashboard</h1>
+        <h1>Marble Cost Estimator Blog</h1>
+        <button type="button" id="menu"></button>
+        <nav class="navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="wood-calculator.html">Wood</a>
+            <a href="table-cal.html">Table Calculate</a>
+            <a href="blog.html">Blog</a>
+        </nav>
     </header>
     <main>
         <!--<button id="logoutBtn">Logout</button>-->
@@ -37,19 +59,25 @@
                 </div>
                 {% endfor %}
             
-                <form action="" method="post">
+                <form action="" method="post" class="comment-post">
+                    <label for="projectName">Name:</label>
                     <input type="text" name="author" placeholder="Your Name" required>
+                    <label for="emailC">Email</label>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="content" placeholder="Your Comment" required></textarea>
                     <button type="submit">Submit Comment</button>
                 </form>
             
-                <a href="/">Back to Home</a>
+                <!--<a href="/">Back to Home</a>-->
+                <a  href="{{ url_for('blogpost')}}"> Back to Home</a>
             </div>
         </div>
     </main>
+
     <footer>
         <p>&copy; <span id="year"></span> Monday Eseinone - Blog Admin</p>
+        <p id="year"></p> 
+        <p id="date-modified"></p>
     </footer>
 </body>
 </html>

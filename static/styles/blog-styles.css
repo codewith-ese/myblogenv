@@ -1,0 +1,278 @@
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+    padding: .2rem;
+}
+
+article {
+    flex: 3;
+    margin-right: 20px;
+}
+
+article {
+    margin: 0;
+
+}
+.article-content  {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px; 
+    margin: 0;
+    background-color: hsl(0, 0%, 91%);
+    box-shadow: 1px 1px 2px  rgba(0, 0, 0, 0.353);
+    padding: 1rem;
+    
+
+}
+
+.post {
+    background-color: aliceblue;
+    max-width: 500px;
+    padding: 5px;
+}
+
+.post img {
+    width: 100%;
+}
+
+.post h2 {
+    padding: .5rem 1rem;
+    line-height: 1.2;
+}
+
+.article-content-full  {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px; 
+    margin: 0;
+    background-color: hsl(0, 0%, 91%);
+    box-shadow: 1px 1px 2px  rgba(0, 0, 0, 0.353);
+    padding: 1rem;
+}
+
+
+
+ 
+.full-post {
+    background-color: #e8efef;
+    padding: .8rem 2rem;
+    box-shadow: 1px 1px 2px black;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.post-full img {
+    width: 30%;
+    float: left;
+    padding: 1rem;
+}
+
+.post-full h2 {
+    padding: .5rem 1rem;
+    line-height: 1.2;
+}
+.post-full p {
+    padding: .1rem 1rem;
+    line-height: 1.2;
+}
+
+.sidebar {
+    flex: 1;
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px  rgba(0, 0, 0, 0.353);
+}
+
+.sidebar ul {
+    background-color: #1f386e;
+    padding: 5px;
+    list-style: none;
+    border-radius: 6px;
+}
+.sidebar li a {
+    color: #c0bfb3;
+    /* text-shadow: 1px 1px 0 #c1b7b7; */
+}
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: calc(100% - 60px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px;
+    background: var(--color-header);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-slider {
+    margin: 1rem 0;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    height: 200px; /* Adjust height as needed */
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slider img.active {
+    opacity: 1;
+}
+
+.comments-section {
+    margin: 20px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.comment {
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+
+.display-slid-content {
+    margin-top: 0.7rem;
+}
+
+
+
+/* CARD FOR IMAGE STARTS HERE  */
+.card {
+	margin: .5rem auto;
+	padding: 1rem;
+	border: 1px solid black;
+	border-radius: 10px;
+
+}
+.card p {
+	padding: 5px 20px;
+}
+
+ /* card style */
+.card img {
+    width: 200px;
+    height: auto;
+    float: left;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    article {
+        margin:auto;
+
+    }
+
+    .article-content  {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row: auto;
+        grid-gap: 15px; 
+        margin: 0;
+        background-color: #e8e8e8;
+        box-shadow: 1px 1px 2px  rgba(0, 0, 0, 0.353);
+        padding: 1rem;
+        
+    }
+    .post {
+        background-color: aliceblue;
+        padding: 10px;
+    }
+ 
+   .post img {
+        width: 100%;
+    }
+
+    .post p {
+        font-size: var(--font-size-sm);
+    }
+    small {
+        color: red;
+      
+    }
+    .post-full {
+        background-color: aliceblue;
+        width: 100%;
+        /* max-width: 500px; */
+        
+    }
+    .article-content-full  {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row: auto;
+        grid-gap: 15px; 
+        margin: 0;
+        background-color: #e8e8e8;
+        box-shadow: 1px 1px 2px  rgba(0, 0, 0, 0.353);
+        padding: 1rem;    
+    }
+
+    .full-post img {
+        width: 100%;
+        height: auto;
+        padding: 2rem;
+      
+    }
+    small {
+        color: #ff1717;
+        font-size: small;
+    }
+    
+    .sidebar {
+        margin-top: 20px;
+    }
+    
+
+}

@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # Configure the upload folder
 app.config['UPLOAD_FOLDER'] = 'uploads/images'  # Directory to save uploaded images
-app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}  # Allowed image extensions
+app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif','webp'}  # Allowed image extensions
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
@@ -55,6 +55,14 @@ def create_post():
     conn.close()
     
     return redirect('/')
+
+# new blog post page 
+@app.route('/blogpost')
+def blogpost():
+    conn = get_db_connection()
+    posts = conn.execute('SELECT * FROM posts ORDER BY created_at DESC').fetchall()
+    conn.close()
+    return render_template('blogpost.html', posts=posts)
 
 if __name__ == '__main__':
     # Ensure the upload directory exists

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Blog Page</title>
-    <link rel="stylesheet" href="statics/admin-styles.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename ='/admin-styles.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename ='/admin-styles-large.css')}}">
+  
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/admin-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/admin-styles-large.css')}}">
     <script src="scripts/admin-script.js" defer></script>
 
 </head>
@@ -29,7 +29,22 @@
             </section>
             <section>
                 <h2>Posts</h2>
-                    {% for post in posts %}
+                {% for post in posts %}
+                <div class="post">
+                    <h3><a href="/post/{{ post['id'] }}">{{ post['title'] }}</a></h3>
+                    <p>{{ post['content'][:100] }}...</p>
+                    <small>Posted by: {{ post['author'] }} on {{ post['created_at'] }}</small>
+
+                    {% if post['image'] %}
+                    <div>
+                        <h4>Image:</h4>
+                        <img src="{{ url_for('static', filename='uploads/images/' + post['image']) }}" alt="Post Image" style="max-width: 100%; height: auto;">
+                    </div>
+                    {% endif %}
+                    <hr>
+                </div>
+                {% endfor %}
+                    <!--{% for post in posts %}
                     <div class="post">
                         <h3><a href="/post/{{ post['id'] }}">{{ post['title'] }}</a></h3>
                         <p>{{ post['content'][:100] }}...</p>
@@ -42,7 +57,7 @@
                             </div>
                         {% endif %}
                         <hr>
-                    </div>
+                    </div>-->
                 
                     <!-- POST MANAGER STARTS HERE -->
                     
@@ -63,8 +78,11 @@
                             <div id="commentsList"></div>
                         </section>-->
   
-            {% endfor %}
+            <!--{% endfor %}-->
             </section>
+
+            <!--<a href="blog.html">Blog Post</a>-->
+            <a  href="{{ url_for('blogpost')}}"> Blog Post </a>
         </div>
     </main>
     <footer>

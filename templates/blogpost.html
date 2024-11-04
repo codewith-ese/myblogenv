@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog about the Marble Cost Estimator project, featuring tips and insights.">
+    <meta name="author" content="Monday Erirore Eseinone">
+    <title>Blog - Marble Cost Estimator</title>
+
+    <!--<link rel="stylesheet" href="statics/admin-styles.css">-->
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename ='styles/admin-styles.css')}}">-->
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename ='styles/admin-styles-large.css')}}">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/blog-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/mabel-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/mabel-large-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/image-slide.css')}}">
+    <script src="scripts/admin-script.js" defer></script>
+
+
+    <script src="static/scripts/nav.js" defer></script>
+    <script src="static/scripts/mabel-scripts.js" defer></script>
+    <script src="static/scripts/image-slide.js" defer></script>
+    <script src="static/scripts/blog-comment.js" defer></script>
+    <script src="static/scripts/get-date.js" defer></script>
+    <script src="static/scripts/readmore.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <h1>Marble Cost Estimator Blog</h1>
+        <button type="button" id="menu"></button>
+        <nav class="navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="wood-calculator.html">Wood</a>
+            <a href="table-cal.html">Table Calculate</a>
+            <a href="blog.html">Blog</a>
+        </nav>
+    </header>
+    <main>
+        <div class="content-container">
+            <article>
+                <div class="article-content-full">
+         
+                
+                        <h2>Posts</h2>
+                        {% for post in posts %}
+                        <div class="post-full">
+                            <h3><a href="/post/{{ post['id'] }}">{{ post['title'] }}</a></h3>
+                            <p>{{ post['content'][:100] }}...</p>
+                            <small>Posted by: {{ post['author'] }} on {{ post['created_at'] }}</small>
+        
+                            {% if post['image'] %}
+                              <div>
+                                  <h4>Image:</h4>
+                                  <img src="{{ url_for('static', filename='uploads/images/' + post['image']) }}" alt="Post Image" style="max-width: 100%; height: auto;">
+                              </div>
+                            {% endif %}
+                            <hr>
+                        </div>
+                        {% endfor %}
+           
+
+           
+                </div>
+            
+            </article>
+        
+
+            <aside class="sidebar">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button>Search</button>
+                </div>
+                <h3>Recent Posts</h3>
+                <ul>
+                    <li><a href="#">Post 1: How to Choose the Right Marble</a></li>
+                    <li><a href="#">Post 2: Top 5 Marble Trends in 2023</a></li>
+                    <li><a href="#">Post 3: Maintenance Tips for Marble Surfaces</a></li>
+                </ul>
+                <h3>Categories</h3>
+
+                <ul>
+                    <li><a href="#">Installation</a></li>
+                    <li><a href="#">Maintenance</a></li>
+                    <li><a href="#">Design Ideas</a></li>
+                </ul>
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="#">Marble</a></li>
+                    <li><a href="#">Cost Estimation</a></li>
+                    <li><a href="#">Home Improvement</a></li>
+                </ul>
+                <h3>Quick Link</h3>
+                <ul>
+                    <li><a href="blog.html">Posts</a></li>
+                    <li><a href="blog-view.html">Blog Categories</a></li>
+                    <li><a href="table-cal.html">Table Calculate</a></li>
+                </ul>
+            </aside>
+        </div>
+
+        <section>
+            <div class="display-slid-content">
+                <div class="image-slider">
+                    
+                    <h2 style="text-align:center">Slideshow Gallery</h2>
+                    <div class="slider-container">
+                      <div class="slide">
+                        <div class="numbertext">1 / 6</div>
+                        <img src="static/images/img_woods.webp" alt="mable1 image">
+                      </div>
+                    
+                      <div class="slide">
+                        <div class="numbertext">2 / 6</div>
+                        <img src="static/images/img_woods2.webp" alt="mable2 image">
+                      </div>
+                    
+                      <div class="slide">
+                        <div class="numbertext">3 / 6</div>
+                        <img src="static/images/img_woods3.webp" alt="mable3 image">
+                      </div>
+                        
+                      <div class="slide">
+                        <div class="numbertext">4 / 6</div>
+                        <img src="static/images/img_woods4.webp" alt="mable4 image">
+                      </div>
+                    
+                      <div class="slide">
+                        <div class="numbertext">5 / 6</div>
+                        <img src="static/images/img_woods5.webp" alt="mable5 image">
+                      </div>
+                        
+                      <div class="slide">
+                        <div class="numbertext">6 / 6</div>
+                        <img src="static/images/img_woods6.webp" alt="mable6 image">
+                      </div>
+                        
+                      <a class="prev" onclick="changeSlide(-1)">❮</a>
+                      <a class="next" onclick="changeSlide(1)">❯</a>
+                    
+                      <div class="caption-container">
+                        <p id="caption"></p>
+                      </div>
+                    
+                      <div class="row">
+                        <div class="column">
+                          <img class="thumbnail cursor" src="static/images/img_woods.webp" style="width:100%" onclick="setCurrentSlide(1)" alt="mable1 image" loading="lazy">
+                        </div>
+                        <div class="column">
+                          <img class="thumbnail cursor" src="static/images/img_woods2.webp" style="width:100%" onclick="setCurrentSlide(2)" alt="mable2 image" loading="lazy">
+                        </div>
+                        <div class="column">
+                          <img class="thumbnail cursor" src="static/images/img_woods3.webp" style="width:100%" onclick="setCurrentSlide(3)" alt="mable3 image" loading="lazy">
+                        </div>
+                        <div class="column">
+                          <img class="thumbnail cursor" src="static/images/img_woods4.webp" style="width:100%" onclick="setCurrentSlide(4)" alt="mable4 image" loading="lazy">
+                        </div>
+                        <div class="column">
+                          <img class="thumbnail cursor" src="static/images/img_woods5.webp" style="width:100%" onclick="setCurrentSlide(5)" alt="mable5 image" loading="lazy">
+                        </div>    
+                        <div class="column">
+                          <img class="thumbnail cursor" src="static/images/img_woods6.webp" style="width:100%" onclick="setCurrentSlide(6)" alt="mable6 image" loading="lazy">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="social-link">
+                    <h2>Social links </h2>
+                    <ul>
+                        <li> Facebook </li>
+                        <li> Instagram </li>
+                        <li> Twiter </li>
+                        <li> Linkdin </li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="comments-section">
+            <h2>Comments</h2>
+            <form onsubmit="submitComment(event)">
+                <textarea id="commentInput" placeholder="Leave a comment..." required></textarea>
+                <button type="submit">Submit Comment</button>
+            </form>
+            <div id="commentDisplay"></div>
+        </section>
+    </main>
+    <footer>
+        <p id="year"></p> 
+        <p id="date-modified"></p>
+    </footer>
+</body>
+</html>

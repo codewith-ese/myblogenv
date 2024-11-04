@@ -1,0 +1,406 @@
+:root {
+    /* Generic */
+    --color-primary: #654534;
+    --color-primary-light: #7e57c2;
+    --color-primary-dark: #5e35b1;
+    --color-background: #F9F8F5;
+    --color-text: #1b1919;
+    --color-header: #1f386e;
+    --color-footer: #1f386e;
+    --color-accent: #c1a728;
+    
+    --gutter-sm: 0.6rem;
+    --gutter-md: 1.1rem;
+    --gutter-lg: 1.6rem;
+    --gutter-xl: 2rem;
+    --gutter-xxl: 7.2rem;
+
+    --font-family: 'Roboto', Arial, sans-serif; /* Fallback font */
+    --font-size-sm: 1.1rem;
+    --font-size-md: 1.2rem;
+    --font-size-lg: 2.1rem;
+    --font-size-xl: 2.8rem;
+    --font-size-xxl: 3.6rem;
+    
+    --line-height: 1.5;
+    --transition-duration: 300ms;
+    --transition-ease: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Global Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--fontFamily);
+	font-size: var(--fontSizeMd);
+	line-height: var(--lineHeightMd);
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+/* mobile **************************/
+
+h1 {
+	font-size: 1.8rem;
+	color: #1f386e;
+}
+
+h2 {
+	font-size: 1.4rem;
+}
+
+
+header,
+main {
+	margin: 0 auto;
+}
+
+header {
+    background-color: #e3e8e6e2;
+	display: grid;
+	grid-gap: .1rem;
+	padding: 1rem 2rem;
+    border-bottom: 3px solid #1f386e;
+    box-shadow: 1px 2px 5px black;
+    margin: 0px auto;	
+}
+
+header h1 {
+    font-size: medium;
+}
+
+header h2 {
+	font-size: 1rem;
+	text-align: center;
+}
+
+nav {
+	background-color:#e3e8e6e2;
+	display: flex;
+	flex-direction: column;
+}
+
+nav a {
+	display: block;
+	color: #072719e2;
+	text-align: center;
+	padding: 1rem;
+	text-decoration: none;
+}
+
+nav a:hover {
+	text-decoration: underline double;
+	background-color: #eee;
+	color: #000;
+}
+
+.active {
+	color: yellow;
+}
+
+
+/* small view navigation */
+#menu {
+	font-size: 1.7rem;
+	border: 0;
+	background: none;
+	color: #000;
+	border: 1px solid #d1d7d4fc;
+	padding: 2px 10px;
+	border-radius: 5px;
+}
+
+#menu::before {
+	content: "☰";
+	color: #1f386e;
+    position: absolute;
+	top: .5rem;
+	right: 1rem;
+}
+
+#menu.open::before {
+	content: "❎";
+}
+
+.navigation {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	background-color: #e3e8e6e2;
+	color: #1f386e;
+	max-width: 900px;
+}
+
+.navigation a {
+	display: none;
+	padding: 1rem;
+	text-align: center;
+	text-decoration: none;
+	color: #1f386e;
+}
+
+.navigation a:hover {
+	background-color: #bbb;
+	color: #ce2a36;
+	font-weight: 400;
+	font-size: large;
+}
+
+/* when the button is clicked - the open class is toggled (added/removed) */
+.open a {
+	display: block;
+}
+
+.active::before {
+	content: "🔽";
+	/* just a wayfinding symbol for the user */
+}
+
+
+main {
+    align-items: center;
+    background-color: #fff;
+    padding: 0px;
+    color: #1f386e; 
+    margin: auto;
+}
+
+
+
+/* FORM STYLS STARTS HERE  */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    max-width: 900px;
+    margin: auto;  
+}
+
+.container {
+    display: block;
+    margin: auto;
+    max-width: 500px;
+    padding-top: 2px;
+}
+.container h1{
+    background-color: #f9f6f1;
+    color: #1bed4c;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    box-shadow: 1px 1px 2px black;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.6em;
+}
+
+
+.container h2 {
+    padding: 1rem 1rem;
+}
+
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #05651b;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #121413;
+    color: wheat;
+}
+
+#namedemo, #total, #pricedemo, #date,
+#materialslist, #tableTop, #tableLegs,
+#boardPricedemo, #tableConnL, #tableConnS
+{
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#namedemo {
+    font-weight: bold;
+}
+
+#total,
+#pricedemo, #date,
+#materialslist, 
+#tableTop, #tableLegs,
+#boardPricedemo,  
+#tableConnL, #tableConnS
+{
+    color: #555;
+}
+
+
+.result-class {
+    background-color: #ddd;
+    box-shadow: 1px 2px 3px black;
+    margin-bottom: 2rem;
+    padding: 1rem 1rem;
+    width: 375px;
+    max-width: 400px;  
+}
+
+
+/* THANK YOU PAGE STYLE STARTS HERE  */
+.thank-you-container {
+	display: block;
+    width: 100%;
+    max-width: 650px;
+	place-items: center;
+    padding: 4rem .5rem .5rem;
+    background-color: #F9F8F5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: auto;
+	margin: auto;
+}
+.thank-you-container h1{
+    padding: .8rem 1rem;
+    text-align: left; 
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+}
+.thank-you-container h2{
+    padding: .8rem 1rem .3rem;
+    text-align: left; 
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+.thank-you-container p{
+    padding: 0 1rem;
+    text-align: left; 
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+/* BLOG STYLE IN IMAGE SLIDER STARTS HERE  */
+.display-slid-content {
+    background-color: var(--color-footer);
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2px;
+    padding: .5rem 0;
+
+    border-top: 4px solid var(--color-accent);
+    border-bottom: 4px solid var(--color-accent);
+}
+
+.social-link {
+    margin:auto;
+    padding: 1rem;
+    background-color: var(--color-footer)
+}
+
+
+
+/* Style for the collapsible buttons */
+.toggle-button {
+    background-color: aliceblue;
+    color: #1f386e;
+    cursor: pointer;
+    padding: .5rem .8rem;
+    width: 95%;
+    border-radius: 6px;
+    text-align: left;
+    outline: none;
+    font-size: .8rem;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.396);
+    margin: .2rem .5rem;
+}
+
+.toggle-button:hover {
+    color: #1f386e;
+    font-weight: 700;
+}
+
+/* background color on hover and when active */
+.toggle-button.active, .toggle-button:hover {
+    background-color: aliceblue;
+    }
+
+    /* right arrow when collapsed */
+    .toggle-button:after {
+    content: '➡️'; 
+    color: #1f386e;
+    font-weight: bold;
+    float: left;
+    margin-left: 5px;
+}
+
+/* down arrow when expanded */
+.toggle-button.active:after {
+    content: '⬇️'; 
+}
+
+/* collapsible content */
+.toggle-content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    /* background-color: #222; */
+    background-color: aliceblue;
+}
+
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: var(--color-footer);
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+}
+
+
+
