@@ -1,9 +1,25 @@
+from sqlite3 import connect
 from flask import Flask, render_template, request, redirect, url_for
+from werkzeug.security import check_password_hash
 from werkzeug.utils import secure_filename
 import os
 from models import get_db_connection
 
+from flask import Flask, redirect, url_for, render_template, request, session, flash
+
+# from werkzeug.security import generate_password_hash
+
+# # Example of creating a new user
+# def create_user(username, password):
+#     hashed_password = generate_password_hash(password)
+#     conn = get_db_connection()
+#     conn.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, hashed_password))
+#     conn.commit()
+#     conn.close()
+    
+    
 app = Flask(__name__)
+app.secret_key = 'codehub_secret_key_ese'  # Change this to a random secret key
 
 # Configure the upload folder
 app.config['UPLOAD_FOLDER'] = 'uploads/images'  # Directory to save uploaded images
@@ -14,17 +30,88 @@ def allowed_file(filename):
 
 @app.route('/')
 def index():
-    conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM posts ORDER BY created_at DESC').fetchall()
-    conn.close()
-    return render_template('index.html', posts=posts)
+
+    return render_template('index.html')
+# @app.route("/admin_login", methods=["POST", "GET"])
+# def admin_login():
+
+#     try:  
+#         if request.method == "POST":
+#             # Collect email and password from the login form
+#             adname = request.form["admin_name"]
+#             ademail = request.form["admin_email"]
+#             adpassw = request.form["admin_passw"]
+
+#             # Check if the email and password match an existing account
+#             with connect.connection.cursor() as cursor:
+#                 cursor.execute("SELECT * FROM admin WHERE name_admin=%s AND email_admin=%s AND password=%s", (adname, ademail, adpassw))
+#                 account = cursor.fetchone()
+
+#             if account:
+#                 # If the login is successful, store the visitor ID in the session
+#                 session["visitor_id"] = account[0]
+#                 flash("Logged in successfully!")
+#                 return redirect(url_for("admin"))
+#             else:
+#                 flash("Invalid email or password!")
+
+#         # Render the login template
+#         return render_template("admin_login.html")
+
+#     except Exception as e:
+#         flash(f"Error occurred: {str(e)}")
+#         return render_template("admin_login.html")
+
+# @app.route('/admin_login', methods=['GET', 'POST'])
+# def admin_login():
+#     if request.method == 'POST':
+#         username = request.form['username']
+#         password = request.form['password']
+
+#         conn = get_db_connection()
+#         user = conn.execute('SELECT * FROM users WHERE username = ?', (username,)).fetchone()
+#         conn.close()
+
+#         if user and check_password_hash(user['password'], password):
+#             session['user_id'] = user['id']  # Store user ID in session
+#             flash('Login successful!', 'success')
+#             return redirect(url_for('admin'))  # Redirect to admin page
+#         else:
+#             flash('Invalid username or password', 'danger')
+
+#     return render_template('admin_login.html')
+
+@app.route('/admin_login', methods=['GET', 'POST'])
+def admin_login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        conn = get_db_connection()
+        user = conn.execute('SELECT * FROM users WHERE username = ?', (username,)).fetchone()
+        conn.close()
+
+        if user and check_password_hash(user['password'], password):
+        # if user and (user['password'], password):
+        # if not conn or username == "" or password == "":
+            # flash("Sorry, incorrect credential provided")
+            # return render_template('signin.html', sssemail=sssemail)
+        
+            session['user_id'] = user['id']  # Store user ID in session
+            flash('Login successful!', 'success')
+            return redirect(url_for('admin'))  # Redirect to admin page
+        else:
+            flash('Invalid username or password', 'danger')
+
+    return render_template('admin_login.html')
+
 
 @app.route('/admin')
-def addmin():
+def admin():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM posts ORDER BY created_at DESC').fetchall()
     conn.close()
-    return render_template('admin.html', posts=posts)
+    return render_template('admin.html')
 
 
 @app.route('/post/<int:post_id>', methods=['GET', 'POST'])
