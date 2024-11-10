@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Eseinone Blog 2024">
     <meta name="author" content="Monday Erirore Eseinone">
-    <title>gggg</title>
+    <title>Material-Estimator-blog</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename ='styles/blog-styles.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename ='styles/mabel-styles.css')}}">
@@ -29,8 +29,10 @@
         <button type="button" id="menu"></button>
         <nav class="navigation">
             <a href="{{ url_for('index')}}" class="active">Home</a>
+            <a href="{{ url_for('marble_cal')}}">Marble Cal</a>
             <a href="{{ url_for('wood_calculator')}}">Wood</a>
-            <a href="{{ url_for('table_cal')}}">Table Calculate</a>
+            <a href="{{ url_for('table_cal')}}">Table Cal</a>
+            <a href="{{ url_for('wardrob_cal')}}">Wardrob Cal</a>
             <a href="{{ url_for('blogpost')}}"> Blog</a>
         </nav>
     </header>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eseinone Blog 2024">
+    <meta name="author" content="Monday Erirore Eseinone">
+    <title>Table Calculate</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/blog-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/mabel-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/mabel-large-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/image-slide.css')}}">
+    <script src="scripts/admin-script.js" defer></script>
+
+
+    <script src="static/scripts/nav.js" defer></script>
+    <script src="static/scripts/mabel-scripts.js" defer></script>
+    <script src="static/scripts/wardrob-scripts.js" defer></script>
+    <script src="static/scripts/blog-comment.js" defer></script>
+    <script src="static/scripts/get-date.js" defer></script>
+    <script src="static/scripts/readmore.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <h1>Marble Cost Estimator Blog</h1>
+        <button type="button" id="menu"></button>
+        <nav class="navigation">
+            <a href="{{ url_for('index')}}" class="active">Home</a>
+            <a href="{{ url_for('marble_cal')}}">Marble Cal</a>
+            <a href="{{ url_for('wood_calculator')}}">Wood</a>
+            <a href="{{ url_for('table_cal')}}">Table Cal</a>
+            <a href="{{ url_for('wardrob_cal')}}">Wardrob Cal</a>
+            <a href="{{ url_for('blogpost')}}"> Blog</a>
+        </nav>
+    </header>
+    <main>
+        <div class="form-grid">
+            <div class="container">
+                <h1>Enter the size of your wardrobe below. ⬇️</h1>
+                <form id="wardrobForm" class="mf2">
+                    <label for="projectName">Project Name:</label>
+                    <input type="text" id="projectName" required>
+                    <br><br>
+
+                    <h2>Measurements</h2>
+                    <label for="wardLenght">Wardrobe Length (cm):</label>
+                    <input type="number" id="wardLenght" required>
+                    <br><br>
+        
+                    <label for="wardWidth">Wardrobe Width (cm):</label>
+                    <input type="number" id="wardWidth" required>
+                    <br><br>
+    
+                    <label for="wardhight">Wardrobe Height (cm):</label>
+                    <input type="number" id="wardhight" required>
+                    <br><br>
+
+                    <label for="warddemacation">Number of  Demacation (cm):</label>
+                    <input type="number" id="warddemacation" required>
+                    <br><br>
+
+                    <label for="warddoors">Number of  Doors (cm):</label>
+                    <input type="number" id="warddoors" required>
+                    <br><br>
+
+                    <label for="warddrawers">Number of  Drawers (cm):</label>
+                    <input type="number" id="warddrawers" required>
+                    <br><br>
+                    
+                    <button type="submit">Calculate Total Cost</button>
+                </form>
+            </div>
+            <div class="container">
+                <div id="result-display" class="result-class">
+                    <h2>Results</h2>
+                    <div id="namedemo">Project Name Will Show here</div>
+                    <div id="shelvesDemo">Shelves</div>
+                    <div id="hightDemo">Table Legs</div>
+                    <div id="doorsDemo">Connections</div>
+                    <div id="connectionDemo">Connnections</div>
+                    <div id="date">Date</div>
+                    <br>
+                    <hr>
+                    <div id="author">Created by EME </div> 
+                </div>
+                <button id="printResultsButton">Print Results</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p id="year"></p> 
+        <p id="date-modified"></p>
+    </footer>
+
+
+
+

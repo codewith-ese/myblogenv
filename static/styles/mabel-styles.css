@@ -171,6 +171,61 @@ main {
     margin: auto;
 }
 
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0rem;
+    background-color: #00000055;
+    z-index: 1000;
+    width: 1300px;
+    max-width: 1280px;
+    height: 600px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+   
+}
+
+/* Welcome Class */
+.welcome-class {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to 1 column */
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: .1rem .5rem;
+    width: 300px;
+    max-width: 90%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 20px 20px 30px rgba(2, 2, 1, 0.591);
+    color: white;
+}
+
+.welcome-class h1 {
+    color: #fff;
+    font-size: var(--font-size-lg);
+    line-height: normal;
+}
+
+.welcome-class img {
+    max-width: 100%;
+    height: auto;
+}
+
+.welcome-class p {
+    text-align: left;
+}
+
 
 
 /* FORM STYLS STARTS HERE  */
@@ -247,7 +302,7 @@ button:hover {
 
 #namedemo, #total, #pricedemo, #date, #mabelList, #listCount,
 #materialslist, #tableTop, #tableLegs,
-#boardPricedemo, #tableConnL, #tableConnS
+#boardPricedemo, #tableConnL, #tableConnS, #shelvesDemo, #hightDemo, #doorsDemo, #connectionDemo
 {
     background: #fff;
     padding: 10px;
@@ -268,7 +323,7 @@ button:hover {
 #materialslist, 
 #tableTop, #tableLegs,
 #boardPricedemo,  
-#tableConnL, #tableConnS
+#tableConnL, #tableConnS, #shelvesDemo, #hightDemo, #doorsDemo, #connectionDemo
 {
     color: #555;
 }

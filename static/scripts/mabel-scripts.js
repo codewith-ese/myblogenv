@@ -42,7 +42,7 @@ document.getElementById("marbleForm").addEventListener("submit", function(event)
 
     let oneSqm = 100 * 100; // 1 square meter in square centimeters
     let totalSq = totalArea / oneSqm;
-    let roundTotal = totalSq.toFixed(2);
+    let roundTotal = totalSq.toFixed(1);
     let totalCost = roundTotal * MarblePrice;
 
     // Get current date
@@ -55,8 +55,8 @@ document.getElementById("marbleForm").addEventListener("submit", function(event)
     document.getElementById("total").innerHTML = "Total Estimate is ➡️ : " + roundTotal + " squre meter";
     document.getElementById("pricedemo").innerHTML = "Total Cost of Marble is ➡️ #" + totalCost + "  ";
     document.getElementById("date").innerHTML = "Date: " + formattedDate; // Display the date
-    document.getElementById("mabelList").innerHTML = " Mabel List: " + ma_list;
-    document.getElementById("listCount").innerHTML = " Numbers in List: " + mesurements;
+    document.getElementById("mabelList").innerHTML = " Marble List: " + ma_list;
+    document.getElementById("listCount").innerHTML = " Marble Quantity: " + mesurements;
     document.getElementById("author").innerHTML = " Author: " + author;
 });
 

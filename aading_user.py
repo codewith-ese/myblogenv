@@ -31,15 +31,18 @@ conn.close()
 # date2 = datetime.now().strftime(f"%d-%m-%Y------- %H:%M:%S %p")  # Get current date
 
  
-# name = "Mondayeseinone2024".title() 
-name = "mondayab" 
-# date = date2
-# savings = 0
-pass_word = "eseMonday@24"
+name = "Mondayeseinone2024"
+pass_word = "eseMonday@24" # Mon@Ese12
+
+
+
+# name = "eseinonecodehub@gmail.com"
+# pass_word = "eseMonday@24"
 
             # savings = phone_ent.get()
 conn = sqlite3.connect('blog.db')
 c = conn.cursor()
+# c.execute("INSERT INTO users (username, password) VALUES (?, ?)", (name, pass_word))
 c.execute("INSERT INTO users (username, password) VALUES (?, ?)", (name, pass_word))
 conn.commit()
 conn.close()

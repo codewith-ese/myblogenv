@@ -28,76 +28,40 @@
         <button type="button" id="menu"></button>
         <nav class="navigation">
             <a href="{{ url_for('index')}}" class="active">Home</a>
+            <a href="{{ url_for('marble_cal')}}">Marble Cal</a>
             <a href="{{ url_for('wood_calculator')}}">Wood</a>
-            <a href="{{ url_for('table_cal')}}">Table Calculate</a>
+            <a href="{{ url_for('table_cal')}}">Table Cal</a>
+            <a href="{{ url_for('wardrob_cal')}}">Wardrob Cal</a>
             <a href="{{ url_for('blogpost')}}"> Blog</a>
         </nav>
     </header>
     <main>
-        <div class="form-grid">
-            <div class="container">
-                <h1>Enter the measurements of your marble in the form below. ⬇️</h1>
-                <form id="marbleForm" class="mf1">
-                    <label for="projectName">Project Name:</label>
-                    <input type="text" id="projectName" required>
-                    <br><br>
-                    
-                    <!-- <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" required>
-                    <br><br> -->
-                    
-                    <label for="marblePrice">Price per square meter:</label>
-                    <input type="number" id="marblePrice" required>
-                    <br><br>
         
-                    <h2>Measurements</h2>
-                    <label for="length">Length (m):</label>
-                    <input type="number" id="length" required>
-                    <br><br>
-    
-                    <label for="width">Width (m):</label>
-                    <input type="number" id="width" required>
-                    <br><br>
-                    
-                    <!-- <button type="button" id="addMeasurement">Add Measurement</button> -->
-                    <button type="submit">Calculate Total Cost</button>
-                </form>
+        <div class="hero">
+            <div class="hero-overlay">
             </div>
-            <div class="container">
-                <div id="result-display" class="result-class">
-                    <h2>Results</h2>
-                    <div id="namedemo">Project Name Will Show here</div>
-                    <div id="total">00.0</div>
-                    <div id="pricedemo">00.0</div>
-                    <div id="date">Date</div>
-                    <div id="mabelList">List</div>
-                    <div id="listCount">Count</div>
-                    <div id="author">Created by EME</div>
-                </div>
-                <button id="printResultsButton">Print Marble Results</button>
+            <picture>
+                <source srcset="static/images/hero-large.jpg" media="(min-width: 1000px)" loading="lazy">
+                <source srcset="static/images/hero-medium.webp" media="(min-width: 500px)" loading="lazy">
+                <img src="/static/images/hero-small.jpg" alt="Eseinone Code Hub backgroud image" loading="lazy" width="300px" height="500px">
+            </picture>
+            <div class="welcome-class">
+                <section>
+                    <h1>Material Estimator <br>E-Code Hub!  </h1>
+                    <p> Here, you’ll find a collection of my work, skills, 
+                        and services as a web developer and 
+                        software development student.</p> 
+                        <div class="button"><a href="contact.html" class="button-exp"> Contact Us &#8594;</a></div>   
+                </section>
+                <section>
+                    <!--<img src="/static/images/profile9.webp" alt=" Eseinone Code Hub Welcome image" loading="lazy" width="400px" height="300px">-->
+                    <img src="/static/images/start.jpg" alt=" Eseinone Code Hub Welcome image" loading="lazy" width="400px" height="300px">
+                </section>
 
             </div>
+
         </div>
-        <div class="small-blog-display">
-            <!-- BLOG DISPLAY STARTS HERE -->
-            <h2>Recent Posts</h2>
-            {% for post in posts %}
-            <div class="post-blog">
-                <h3><a href="/post/{{ post['id'] }}">{{ post['title'] }}</a></h3>
-                <p>{{ post['content'][:100] }}...</p>
-                <small>Posted by: {{ post['author'] }} on {{ post['created_at'] }}</small>
-
-                {% if post['image'] %}
-                <div>
-                    <h4>Image:</h4>
-                    <img src="{{ url_for('static', filename='uploads/images/' + post['image']) }}" alt="Post Image" style="max-width: 100%; height: auto;">
-                </div>
-                {% endif %}
-                <hr>
-            </div>
-            {% endfor %}
-        </div>
-
+ 
     </main>
     <footer>
         <p id="year"></p> 

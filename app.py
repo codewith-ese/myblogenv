@@ -7,15 +7,17 @@ from models import get_db_connection
 
 from flask import Flask, redirect, url_for, render_template, request, session, flash
 
-# from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash
 
-# # Example of creating a new user
-# def create_user(username, password):
-#     hashed_password = generate_password_hash(password)
-#     conn = get_db_connection()
-#     conn.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, hashed_password))
-#     conn.commit()
-#     conn.close()
+
+
+# Example of creating a new user
+def create_user(username, password):
+    hashed_password = generate_password_hash(password)
+    conn = get_db_connection()
+    conn.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, hashed_password))
+    conn.commit()
+    conn.close()
     
     
 app = Flask(__name__)
@@ -32,54 +34,6 @@ def allowed_file(filename):
 def index():
 
     return render_template('index.html')
-# @app.route("/admin_login", methods=["POST", "GET"])
-# def admin_login():
-
-#     try:  
-#         if request.method == "POST":
-#             # Collect email and password from the login form
-#             adname = request.form["admin_name"]
-#             ademail = request.form["admin_email"]
-#             adpassw = request.form["admin_passw"]
-
-#             # Check if the email and password match an existing account
-#             with connect.connection.cursor() as cursor:
-#                 cursor.execute("SELECT * FROM admin WHERE name_admin=%s AND email_admin=%s AND password=%s", (adname, ademail, adpassw))
-#                 account = cursor.fetchone()
-
-#             if account:
-#                 # If the login is successful, store the visitor ID in the session
-#                 session["visitor_id"] = account[0]
-#                 flash("Logged in successfully!")
-#                 return redirect(url_for("admin"))
-#             else:
-#                 flash("Invalid email or password!")
-
-#         # Render the login template
-#         return render_template("admin_login.html")
-
-#     except Exception as e:
-#         flash(f"Error occurred: {str(e)}")
-#         return render_template("admin_login.html")
-
-# @app.route('/admin_login', methods=['GET', 'POST'])
-# def admin_login():
-#     if request.method == 'POST':
-#         username = request.form['username']
-#         password = request.form['password']
-
-#         conn = get_db_connection()
-#         user = conn.execute('SELECT * FROM users WHERE username = ?', (username,)).fetchone()
-#         conn.close()
-
-#         if user and check_password_hash(user['password'], password):
-#             session['user_id'] = user['id']  # Store user ID in session
-#             flash('Login successful!', 'success')
-#             return redirect(url_for('admin'))  # Redirect to admin page
-#         else:
-#             flash('Invalid username or password', 'danger')
-
-#     return render_template('admin_login.html')
 
 @app.route('/admin_login', methods=['GET', 'POST'])
 def admin_login():
@@ -92,10 +46,6 @@ def admin_login():
         conn.close()
 
         if user and check_password_hash(user['password'], password):
-        # if user and (user['password'], password):
-        # if not conn or username == "" or password == "":
-            # flash("Sorry, incorrect credential provided")
-            # return render_template('signin.html', sssemail=sssemail)
         
             session['user_id'] = user['id']  # Store user ID in session
             flash('Login successful!', 'success')
@@ -173,7 +123,16 @@ def table_cal():
     # posts = conn.execute('SELECT * FROM posts ORDER BY created_at DESC').fetchall()
     # conn.close()
     return render_template('table_cal.html')
+@app.route('/wardrob_cal')
+def wardrob_cal():
+    
+    return render_template("wardrob_cal.html")
 
+@app.route('/marble_cal')
+def marble_cal():
+    
+    return render_template("marble_cal.html")
+ 
 if __name__ == '__main__':
     # Ensure the upload directory exists
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)

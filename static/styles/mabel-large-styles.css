@@ -154,3 +154,98 @@
     }
      
 }
+
+/* HOME STYLE STARTS HERE  */
+
+@media (min-width: 820px) {
+    .welcome-class {
+        display: grid;
+        grid-template-columns: 1fr;   
+        grid-gap: 1rem;
+        transform: translateX(-50%);
+        padding: 1rem;
+        max-width: 100%; 
+        background: #00000073;
+        box-shadow: 1px 20px 20px 30px rgba(2, 2, 1, 0.591);
+    }
+
+    .welcome-class img {
+        max-width: 250px;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    .welcome-class h1 {
+        font-family: 'Montserrat', sans-serif;
+        color: #fff;
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 2.5rem;
+        margin: auto;
+        text-shadow: 0 0 15px #00000080;
+        text-align: left;
+        padding: 1rem;
+    }
+    
+    .welcome-class p {
+        color: #fff;
+        font-size: var(--fontSizeSm);
+        line-height: 1.4rem;
+        padding: 0 1rem;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: left;   
+    }   
+}
+
+@media (min-width: 500px) {
+    .welcome-class {
+        grid-template-columns: 60% 40%; 
+        top: 10%;
+        width: 400px; 
+    }
+    .welcome-class img {
+        padding: .5rem;
+        border-radius: 3rem;
+
+    }
+    .welcome-class h1 {
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: normal;
+    }
+    .welcome-class p {
+        font-size: var(--gutterMd);
+        line-height: normal;
+    }
+}
+
+@media (min-width: 1000px) {
+    .welcome-class {
+        grid-template-columns: 60% 40%; 
+        display: grid;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: .1rem .5rem;
+        width: 600px;
+        max-width: 90%;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow: 1px 20px 20px 30px rgba(2, 2, 1, 0.591);
+        color: white;
+    
+        
+    }
+    .welcome-class img {
+        padding: .5rem;
+        border-radius: 5rem;
+    }
+    .welcome-class h1 {
+        color: #fff;
+        font-size: var(--font-size-xl);
+        
+        line-height: normal;
+        
+    }
+}

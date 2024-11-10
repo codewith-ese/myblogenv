@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Eseinone Blog 2024">
     <meta name="author" content="Monday Erirore Eseinone">
-    <title>gggg</title>
+    <title>Wood Calculate - Eseinone Code Hub </title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename ='styles/blog-styles.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename ='styles/mabel-styles.css')}}">
@@ -16,7 +16,7 @@
 
     <script src="static/scripts/nav.js" defer></script>
     <script src="static/scripts/mabel-scripts.js" defer></script>
-    <script src="static/scripts/wood-script.js" defer></script>
+    <script src="static/scripts/wood-scripts.js" defer></script>
     <script src="static/scripts/blog-comment.js" defer></script>
     <script src="static/scripts/get-date.js" defer></script>
     <script src="static/scripts/readmore.js" defer></script>
@@ -29,8 +29,10 @@
         <button type="button" id="menu"></button>
         <nav class="navigation">
             <a href="{{ url_for('index')}}" class="active">Home</a>
+            <a href="{{ url_for('marble_cal')}}">Marble Cal</a>
             <a href="{{ url_for('wood_calculator')}}">Wood</a>
-            <a href="{{ url_for('table_cal')}}">Table Calculate</a>
+            <a href="{{ url_for('table_cal')}}">Table Cal</a>
+            <a href="{{ url_for('wardrob_cal')}}">Wardrob Cal</a>
             <a href="{{ url_for('blogpost')}}"> Blog</a>
         </nav>
     </header>
@@ -71,7 +73,10 @@
                     <div id="total">00.0</div>
                     <div id="boardPricedemo">00.0</div>
                     <div id="date">Date</div>
+
+                    <div id="author">Created by EME </div> 
                 </div>
+                <button id="printResultsButton">Print Results</button>
             </div>
         </div>
 
