@@ -152,8 +152,67 @@
         place-items: center;
         padding: .5rem 2rem; 
     }
-     
+
+    section {
+        margin: 1rem; 
+        max-width: 500px;
+    }
+
+    /* ABOUT PROJECT CLASS STARTS HERE  */
+    .about-project-details-class {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+        place-items: center;
+        padding: .1rem 2rem;
+        margin-bottom: 2rem;
+
+    }
+    
+    .about-project-details-class img {
+        max-width: 100%;
+        height: auto;
+        margin: 1rem auto;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    }
+    
+    figure {
+        padding: 10px;
+    
+    }
+    
+    
+    figcaption {
+        font-size: var(--fontSizeMd);
+        text-align: left;
+        color: #250303;
+        font-weight: bold;
+        line-height: 1.5rem;
+
+    }
+    
+    figure p {
+        font-size: var(--gutterMd);
+        color: #666;
+        padding-top: .4rem;
+        line-height: 1.1rem;
+    }
+    /* HOVER EFECT */
+    .hover{
+        box-shadow: 0 0 50px #333;
+        border-radius: 10px 0 0 0;
+        border: 5px solid #FFF;
+        margin: auto;
+    }
+
+
 }
+     
+
 
 /* HOME STYLE STARTS HERE  */
 
@@ -194,7 +253,64 @@
         max-width: 600px;
         margin: 0 auto;
         text-align: left;   
-    }   
+    } 
+    /* ABOUT PROJECT CLASS STARTS HERE  */
+    .about-project-details-class {
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15px;
+        place-items: center;
+        padding: .1rem 1rem;
+        margin: auto;
+    }
+
+    /* SKILL AS SKL ENDS HERE  */
+    #about-project {
+        padding: 0%;
+    }
+    
+    .about-project-content {
+        background-color: #1f386e;
+        color: #fff;
+        display:grid;
+        grid-template-columns: 1fr  2fr;
+        grid-template-rows: auto;
+        grid-gap: 20px;
+        place-items: center;
+        padding: .1rem 2rem; 
+        margin-top: -1rem;
+    }
+    
+    .row-about-project {
+        margin: auto;
+        padding: .2rem 1rem;
+        text-shadow: 1px 1px 2px #282626;
+    }
+    
+    .about-project-content .row-about-project h2 {
+        margin-top: 0;
+        font-size: var(--gutterLg);
+        text-align: center;
+    }
+    .about-project-content .row-about-project h3 {
+        margin: .1rem 0;
+        font-size: var(--fontSizeMd);
+        text-align: left;
+    }
+    
+    .about-project-content .row-about-project p {
+        margin-top: 0;
+        font-size: var(--gutterMd);
+        line-height: 1.2rem;
+        text-align: left;
+        padding: auto;
+        color: wheat;
+        padding: .5rem;
+        
+    
+    }
+    
+      
 }
 
 @media (min-width: 500px) {

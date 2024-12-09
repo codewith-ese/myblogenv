@@ -31,9 +31,10 @@
         <button type="button" id="menu"></button>
         <nav class="navigation">
           <a href="{{ url_for('index')}}" class="active">Home</a>
+          <a href="{{ url_for('marble_cal')}}">Marble</a>
           <a href="{{ url_for('wood_calculator')}}">Wood</a>
-          <a href="{{ url_for('table_cal')}}">Table Cal</a>
-          <a href="{{ url_for('wardrob_cal')}}">Wardrob Cal</a>
+          <a href="{{ url_for('table_cal')}}">Table</a>
+          <a href="{{ url_for('wardrob_cal')}}">Wardrobe</a>
           <a href="{{ url_for('blogpost')}}"> Blog</a>
         </nav>
     </header>
@@ -42,56 +43,61 @@
             <article>
                 <div class="article-content-full">
 
-                        <h2>Posts</h2>
-                        {% for post in posts %}
-                        <div class="post-blog">
-                            <h3><a href="/post/{{ post['id'] }}">{{ post['title'] }}</a></h3>
-                            <p>{{ post['content'][:100] }}...</p>
-                            <small>Posted by: {{ post['author'] }} on {{ post['created_at'] }}</small>
-        
-                            {% if post['image'] %}
-                              <div>
-                                  <h4>Image:</h4>
-                                  <img src="{{ url_for('static', filename='uploads/images/' + post['image']) }}" alt="Post Image" style="max-width: 100%; height: auto;">
-                              </div>
-                            {% endif %}
-                            <hr>
-                        </div>
-                        {% endfor %}
-                </div>
-            
-            </article>
-        
+                  <h2>Posts</h2>
+                  {% for post in posts %}
+                  <div class="post-blog">
 
+                  {% if post['image'] %}
+                    <img src="{{ url_for('static', filename='uploads/images/' + post['image']) }}" alt="Post Image" style="max-width: 100%; height: auto;">
+            
+                  {% endif %}
+                  <hr>                  
+                      <h3><a href="/post/{{ post['id'] }}">{{ post['title'] }}</a></h3>
+                      <p>{{ post['content'][:100] }}...</p>
+                      <p id="read-more2"><a href="/post/{{ post['id'] }}">Read More! </a></p>
+                      <small>Posted by: {{ post['author'] }} on {{ post['created_at'] }}</small>
+                  </div>
+                  {% endfor %}
+
+                </div>
+            </article>
+            
             <aside class="sidebar">
                 <div class="search-bar">
                     <input type="text" placeholder="Search...">
                     <button>Search</button>
                 </div>
                 <h3>Recent Posts</h3>
+                
+
+                     {% for post in posts %}
+                      <div class="post-blog">
+                          <h4>➡️<a href="/post/{{ post['id'] }}">{{ post['title'] }}</a></h4>
+                         
+                      </div>
+                      {% endfor %}</a>
                 <ul>
-                    <li><a href="#">Post 1: How to Choose the Right Marble</a></li>
-                    <li><a href="#">Post 2: Top 5 Marble Trends in 2023</a></li>
-                    <li><a href="#">Post 3: Maintenance Tips for Marble Surfaces</a></li>
+                    <li>🔗<a href="#">Post 2: Top 5 Marble Trends in 2023</a></li>
+                    <li>🔗<a href="#">Post 3: Maintenance Tips for Marble Surfaces</a></li>
                 </ul>
                 <h3>Categories</h3>
 
                 <ul>
-                    <li><a href="#">Installation</a></li>
-                    <li><a href="#">Maintenance</a></li>
-                    <li><a href="#">Design Ideas</a></li>
+                    <li>➡️<a href="#">Installation</a></li>
+                    <li>➡️<a href="#">Maintenance</a></li>
+                    <li>➡️<a href="#">Design Ideas</a></li>
                 </ul>
                 <h3>Tags</h3>
                 <ul>
-                    <li><a href="#">Marble</a></li>
-                    <li><a href="#">Cost Estimation</a></li>
-                    <li><a href="#">Home Improvement</a></li>
+                    <li>🔗<a href="#">Marble</a></li>
+                    <li>🔗<a href="#">Cost Estimation</a></li>
+                    <li>🔗<a href="#">Home Improvement</a></li>
                 </ul>
                 <h3>Quick Link</h3>
                 <ul>
-                    <li><a href="blog.html">Posts</a></li>
-                    <li><a href="blog-view.html">Blog Categories</a></li>
-                    <li><a href="table-cal.html">Table Calculate</a></li>
+                    <li>🔗<a href="blog.html">Posts</a></li>
+                    <li>🔗<a href="blog-view.html">Blog Categories</a></li>
+                    <li>🔗<a href="table-cal.html">Table Calculate</a></li>
                 </ul>
             </aside>
         </div>

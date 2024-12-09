@@ -21,6 +21,7 @@
     <script src="static/scripts/get-date.js" defer></script>
     <script src="static/scripts/readmore.js" defer></script>
 
+
 </head>
 <body>
     <header>
@@ -28,22 +29,22 @@
         <button type="button" id="menu"></button>
         <nav class="navigation">
             <a href="{{ url_for('index')}}" class="active">Home</a>
-            <a href="{{ url_for('marble_cal')}}">Marble Cal</a>
+            <a href="{{ url_for('marble_cal')}}">Marble</a>
             <a href="{{ url_for('wood_calculator')}}">Wood</a>
-            <a href="{{ url_for('table_cal')}}">Table Cal</a>
-            <a href="{{ url_for('wardrob_cal')}}">Wardrob Cal</a>
+            <a href="{{ url_for('table_cal')}}">Table</a>
+            <a href="{{ url_for('wardrob_cal')}}">Wardrobe</a>
             <a href="{{ url_for('blogpost')}}"> Blog</a>
         </nav>
     </header>
     <main>
         
         <div class="hero">
-            <div class="hero-overlay">
-            </div>
+            <!--<div class="hero-overlay">
+            </div>-->
             <picture>
-                <source srcset="static/images/hero-large.jpg" media="(min-width: 1000px)" loading="lazy">
+                <source srcset="static/images/hero-large.webp" media="(min-width: 1000px)" loading="lazy">
                 <source srcset="static/images/hero-medium.webp" media="(min-width: 500px)" loading="lazy">
-                <img src="/static/images/hero-small.jpg" alt="Eseinone Code Hub backgroud image" loading="lazy" width="300px" height="500px">
+                <img src="/static/images/hero-small.webp" alt="Eseinone Code Hub Material Estimator backgroud image" loading="lazy" width="300px" height="500px">
             </picture>
             <div class="welcome-class">
                 <section>
@@ -51,21 +52,121 @@
                     <p> Here, you’ll find a collection of my work, skills, 
                         and services as a web developer and 
                         software development student.</p> 
-                        <div class="button"><a href="contact.html" class="button-exp"> Contact Us &#8594;</a></div>   
+                        <div class="button"><a href="#" class="button-exp"> Contact Us &#8594;</a></div>   
                 </section>
                 <section>
                     <!--<img src="/static/images/profile9.webp" alt=" Eseinone Code Hub Welcome image" loading="lazy" width="400px" height="300px">-->
-                    <img src="/static/images/start.jpg" alt=" Eseinone Code Hub Welcome image" loading="lazy" width="400px" height="300px">
+                    <a href="#"> <img src="/static/images/start.webp" alt=" Eseinone Code Hub Welcome image" loading="lazy" width="400px" height="300px"></a>
                 </section>
 
             </div>
 
         </div>
+
+        <!-- about-project starts here  -->
+        <div id="about-project">
+            <div class="about-project-content">
+                <div class="row-about-project">
+                    <h3>About Material Calculator</h3>
+                </div>
+                <div class="row-about-project">
+                    <p>App Overview: Cutting List Generator for Tables and Stools</p>
+                </div>
+            </div>
+            <div class="about-project-details-class">
+                <figure>
+                    <img class="hover" src="images/furniture.jpeg" alt="new f image">
+                    <figcaption>  Cutting List Generator for Tables and Stools  </figcaption>
+                    <button class="toggle-button">Open Collapsible</button>
+                    <div class="toggle-content">
+                    <p> This section of the app is designed to simplify the process of creating cutting 
+                        lists for center tables or stools. The user-friendly 
+                        form includes the following inputs: <br>
+                        1.	Project Name: A field to label your project.<br>
+                        2.	Measurements: Fields to input the stool or table dimensions: 
+                        
+                        <a href="{{ url_for('table_cal')}}">Stools/Table</a> 
+                        o	Length (cm)
+                        o	Width (cm)
+                        o	Height (cm)
+                        After filling out the form, users can click the "Calculate Total Cost" button to instantly generate a cutting list with the required dimensions.
+                        Once the result is displayed, the user can:
+                        •	Click the "Print Results" button to print the cutting list.
+                        •	Alternatively, take a screenshot for future reference.
+                        This app simplifies project planning and helps ensure accurate material preparation.</p>
+                    
+                    </div>
+                </figure>
+                <figure>
+                    <img class="hover" src="images/evening_sun.svg" alt=" another f image ">
+                    <figcaption>Wardrobe Cutting List Generator </figcaption>
+                    <button class="toggle-button">Open Collapsible</button>
+                    <div class="toggle-content">
+                    <p>This section of the app is tailored to create cutting lists for wardrobes, cupboards, or bookshelves. It includes the following form fields:
+                        1.	Project Name: A field to name your project.
+                        2.	Measurements: Fields to input precise wardrobe dimensions: 
+                        o	Length (cm)
+                        o	Width (cm)
+                        o	Height (cm)
+                        o	Number of Demarcations
+                        o	Number of Doors
+                        o	Number of Drawers
+                        <a href="{{ url_for('wardrob_cal')}}">Wardrobe</a>
+                        After completing the form, users can click the "Calculate Total Cost" button to generate a detailed cutting list based on their inputs.
+                        The result can then be saved or shared by:
+                        •	Clicking the "Print Results" button to print the cutting list.
+                        •	Taking a screenshot of the displayed output.
+                        This tool simplifies material preparation and helps ensure precision for custom wardrobe projects.</p>
+                    </div>
+                </figure>
+                <figure>
+                    <img class="hover" src="images/furniture.jpeg" alt=" c image">
+                    <figcaption>Marble Cost Estimator </figcaption>
+                    <button class="toggle-button">Open Collapsible</button>
+                    <div class="toggle-content">
+                    <p> This section of the app is designed to estimate the total cost of marble for a project. The form includes the following fields:
+                        1.	Project Name: A field to label your marble project.
+                        2.	Market Price per Square Meter: The current cost of marble per square meter.
+                        3.	Length (cm): The length of the marble piece(s).
+                        4.	Width (cm): The width of the marble piece(s).
+                        After completing the form, users can click the "Calculate Total Cost" button to generate the estimated cost.
+                        The app will continue to prompt the user to enter additional lengths and widths until the user inputs 0 in the respective fields, ensuring calculations for multiple pieces can be included.
+                        Once the result is displayed, it will include:
+                        •	The total square meter of marble required.
+                        •	The estimated total cost based on the entered dimensions and market price.
+                        •	The complete detailed cutting list based on their inputs
+                        Users can then:
+                        •	Click the "Print Results" button to print the estimate.
+                        •	Take a screenshot for quick reference.
+                        This tool provides a simple and accurate way to plan marble-related projects with precision and ease. 
+                        <a href="{{ url_for('marble_cal')}}">Marble</a></p>
+                    </div>
+                </figure>
+                <button class="toggle-button">Open Collapsible</button>
+                <div class="toggle-content">
+                    <p> You can reach out to me through the contact form on 
+                        this website, or connect via LinkedIn at www.linkedin.com/in/monday-eseinone.</p>
+                </div>
+            </div>
+        </div>   
  
     </main>
     <footer>
         <p id="year"></p> 
         <p id="date-modified"></p>
+        <!-- new footer  code -->
+        <div style="margin-bottom: 10px;">
+            <a href="https://www.linkedin.com/in/monday-eseinone" target="_blank" style="color: #ffffff; margin-right: 15px; text-decoration: none;">
+              <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 16px; vertical-align: middle;"> LinkedIn
+            </a>
+            <a href="mailto:eseinonecodehub@gmail.com" style="color: #ffffff; text-decoration: none;">
+              <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width: 16px; vertical-align: middle;"> Email
+            </a>
+          </div>
+          <div style="margin-bottom: 10px;">
+            <a href="/privacy-policy" style="color: #ffffff; margin-right: 15px; text-decoration: none;">Privacy Policy</a>
+            <a href="/terms-of-use" style="color: #ffffff; text-decoration: none;">Terms of Use</a>
+          </div>
     </footer>
 
 

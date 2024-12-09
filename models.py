@@ -7,7 +7,7 @@ def get_db_connection():
 
 def create_tables():
     conn = get_db_connection()
-    
+
     # Create posts table
     conn.execute('''
         CREATE TABLE IF NOT EXISTS posts (
@@ -18,8 +18,10 @@ def create_tables():
             image TEXT,  -- New image field
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
+>>>
+
     ''')
-    
+
     # Create comments table
     conn.execute('''
         CREATE TABLE IF NOT EXISTS comments (
@@ -32,7 +34,7 @@ def create_tables():
             FOREIGN KEY (post_id) REFERENCES posts (id) ON DELETE CASCADE
         )
     ''')
-    
+
     # Create users table
     conn.execute('''
         CREATE TABLE IF NOT EXISTS users (
@@ -42,7 +44,7 @@ def create_tables():
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     ''')
-    
+
     conn.commit()
     conn.close()
 
@@ -84,7 +86,7 @@ if __name__ == '__main__':
 
 # if __name__ == '__main__':
 #     create_tables()
-    
+
 
 
 
