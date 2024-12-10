@@ -43,6 +43,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* mobile **************************/
@@ -167,9 +168,9 @@ nav a:hover {
 main {
     align-items: center;
     background-color: #fff;
-    padding: 0px;
+    padding: 5px;
     color: #1f386e;
-    margin: auto;
+    
 }
 
 .hero-overlay {
@@ -206,10 +207,9 @@ main {
     transform: translateX(-50%);
     padding: .5rem 1rem;
     border-radius: 11px;
-    width: 300px;
-    max-width: 95%;
+    width: 80%;
     text-align: center;
-    background: rgba(0, 0, 0, 0.785);
+    background: rgba(25, 23, 23, 0.552);
     box-shadow: 1px 20px 20px 30px rgba(2, 2, 1, 0.591);
     color: white;
 }
@@ -220,6 +220,7 @@ main {
     line-height: 2.5rem;
     text-align: justify;
     padding: 1rem .1rem 1.2rem 0;
+    letter-spacing: .1rem;
 }
 
 .welcome-class img {
@@ -232,6 +233,7 @@ main {
     font-size: 1.4rem;
     line-height: var(--font-size-lg);
     word-spacing: .1rem;
+    letter-spacing: .1rem;
 }
 
 
@@ -498,6 +500,7 @@ footer {
 #about-project {
     padding: 0%;
     width: 100%;
+    /* max-width: 400px; */
 }
 
 .about-project-content {
@@ -512,6 +515,7 @@ footer {
     text-align: center;
     border-bottom: 4px solid #654534;
     margin-top: -10px;
+    margin: auto;
 }
 
 .row-about-project {
@@ -531,6 +535,7 @@ footer {
     font-size: var(--font-size-md);
     text-align: center;
     padding-left: .1rem;
+    letter-spacing: .1rem;
 }
 
 .about-project-content p {
@@ -538,7 +543,8 @@ footer {
     font-size: var(--font-size-md);
     padding: .2rem;
     color: wheat;
-    text-align: left;
+    text-align: center;
+    letter-spacing: .1rem;
 }
 
 

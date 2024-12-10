@@ -263,6 +263,7 @@
         place-items: center;
         padding: .1rem 3.5rem;
         margin: auto;
+        max-width: 1000px;
     }
 
     /* SKILL AS SKL ENDS HERE  */
@@ -333,7 +334,9 @@
     .welcome-class {
         grid-template-columns: 60% 40%; 
         top: 10%;
-        width: 400px; 
+        width: 500px;
+        max-width: 100%;
+        
     }
     .welcome-class img {
         padding: .5rem;
@@ -343,11 +346,17 @@
     .welcome-class h1 {
         color: #fff;
         font-size: 1.5rem;
-        line-height: normal;
+        line-height: 2rem;
+        text-align: justify;
+        padding: 1rem .1rem 1.2rem 0;
+        letter-spacing: .1rem;
     }
     .welcome-class p {
-        font-size: var(--gutterMd);
-        line-height: normal;
+        text-align: left;
+        font-size: 1.2rem;
+        line-height: var(--font-size-lg);
+        word-spacing: .1rem;
+        padding: .1rem;
     }
 }
 
@@ -360,8 +369,8 @@
         left: 50%;
         transform: translateX(-50%);
         padding: .1rem .5rem;
-        width: 600px;
-        max-width: 90%;
+        width: 800px;
+        max-width: 100%;
         text-align: center;
         background: rgba(0, 0, 0, 0.5);
         box-shadow: 1px 20px 20px 30px rgba(2, 2, 1, 0.591);
