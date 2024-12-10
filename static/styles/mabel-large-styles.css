@@ -162,18 +162,19 @@
     .about-project-details-class {
         display:grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 15px;
+        grid-gap: 20px;
         place-items: center;
-        padding: .1rem 2rem;
-        margin-bottom: 2rem;
+        padding: .1rem .5rem;
+        margin-bottom: .2rem;
+        
 
     }
     
     .about-project-details-class img {
-        max-width: 100%;
+        max-width: 30%;
         height: auto;
-        margin: 1rem auto;
-        padding: 1rem;
+        margin: .2rem auto;
+        padding: .1rem;
         border: 1px solid #ddd;
         border-radius: 4px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -198,8 +199,8 @@
     figure p {
         font-size: var(--gutterMd);
         color: #666;
-        padding-top: .4rem;
-        line-height: 1.1rem;
+        padding-top: 1rem;
+        line-height: 1.6rem;
     }
     /* HOVER EFECT */
     .hover{
@@ -258,9 +259,9 @@
     .about-project-details-class {
         display:grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 15px;
+        grid-gap: 20px;
         place-items: center;
-        padding: .1rem 1rem;
+        padding: .1rem 3.5rem;
         margin: auto;
     }
 
@@ -308,6 +309,21 @@
         padding: .5rem;
         
     
+    }
+    figure {
+        padding: 2px;
+    
+    }
+    
+    
+    figcaption {
+        font-size: var(--fontSizeMd);
+        text-align: left;
+        color: #4d4d4d;
+        font-weight: bold;
+        line-height: 1.5rem;
+        padding: .1rem;
+
     }
     
       

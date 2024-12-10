@@ -95,7 +95,7 @@ def create_post():
         image.save(os.path.join(app.config['UPLOAD_FOLDER'], image_filename))  # Save the image
 
     conn = get_db_connection()
-    conn.execute('INSERT INTO posts (title, content, author, image) VALUES (?, ?, ?, ?)', (title.title(), content.title(), author, image_filename))
+    conn.execute('INSERT INTO posts (title, content, author, image) VALUES (?, ?, ?, ?)', (title.title(), content, author, image_filename))
     conn.commit()
     conn.close()
     
