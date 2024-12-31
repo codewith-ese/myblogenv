@@ -85,7 +85,7 @@ def post(post_id):
 def create_post():
     title = request.form['title']
     content = request.form['content']
-    author = "Monday Esinone"  # Replace with your actual name or retrieve from a user session if you implement user authentication
+    author = "Monday Esinone"  # To replace with actual name or retrieve from a user session if you implement user authentication
 
     # Handle image upload
     image = request.files.get('image')
@@ -95,7 +95,7 @@ def create_post():
         image.save(os.path.join(app.config['UPLOAD_FOLDER'], image_filename))  # Save the image
 
     conn = get_db_connection()
-    conn.execute('INSERT INTO posts (title, content, author, image) VALUES (?, ?, ?, ?)', (title.title(), content, author, image_filename))
+    conn.execute('INSERT INTO posts (title, content, author, image) VALUES (?, ?, ?, ?)', (title, content, author, image_filename))
     conn.commit()
     conn.close()
     
@@ -105,9 +105,19 @@ def create_post():
 @app.route('/blogpost')
 def blogpost():
     conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM posts ORDER BY created_at DESC').fetchall()
+    posts = conn.execute('SELECT * FROM posts ORDER BY created_at DESC LIMIT 5').fetchall()
     conn.close()
+    
     return render_template('blogpost.html', posts=posts)
+
+@app.route('/olderpost')
+def olderpost():  
+    # rendering the older posts in new page page 
+    conn = get_db_connection()
+    old_posts = conn.execute('SELECT * FROM posts ORDER BY title DESC').fetchall()
+    conn.close()
+    
+    return render_template("olderpost.html", old_posts=old_posts)
 
 # new wood calculator route page 
 @app.route('/wood_calculator')
@@ -123,6 +133,7 @@ def table_cal():
     # posts = conn.execute('SELECT * FROM posts ORDER BY created_at DESC').fetchall()
     # conn.close()
     return render_template('table_cal.html')
+
 @app.route('/wardrob_cal')
 def wardrob_cal():
     

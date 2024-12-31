@@ -71,11 +71,33 @@
                 <!--<a href="/">Back to Home</a>-->
                 <a  href="{{ url_for('blogpost')}}"> Back to Home</a>
             </div>
+
+            <!--  OLD POST STARTS HERE -->
+            <div class="article-content-full">
+
+                <h2>Posts</h2>
+                {% for post in old_posts %}
+                <div class="post-blog">
+
+                {% if post['image'] %}
+                  <img src="{{ url_for('static', filename='uploads/images/' + post['image']) }}" alt="Post Image" style="max-width: 100%; height: auto;">
+          
+                {% endif %}
+                <hr>                  
+                    <h3><a href="/post/{{ post['id'] }}">{{ post['title'] }}</a></h3>
+                    <p>{{ post['content'][:100] }}...</p>
+                    <p id="read-more2"><a href="/post/{{ post['id'] }}">Read More! </a></p>
+                    <small>Posted by: {{ post['author'] }} on {{ post['created_at'] }}</small>
+                </div>
+                {% endfor %}
+
+              </div>
+            <!--  OLD POST ENDS HERE -->
         </div>
     </main>
 
     <footer>
-        <p>&copy; <span id="year"></span> Monday Eseinone - Blog Admin</p>
+        <p>&copy; <span id="year"></span> EseinoneCode-Hub - Blog Admin</p>
         <p id="year"></p> 
         <p id="date-modified"></p>
     </footer>

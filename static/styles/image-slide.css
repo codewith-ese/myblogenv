@@ -1,12 +1,6 @@
 
-/*   
-  main {
-      display: block;
-      max-width: 500px;
-      margin: auto;
-  }
-   */
-   img {
+
+.image-slider img {
     vertical-align: middle;
   }
   

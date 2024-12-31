@@ -68,7 +68,7 @@ header {
     display: grid;
     grid-gap: .1rem;
     padding: 1rem 2rem;
-    border-bottom: 3px solid #1f386e;
+    border-bottom: 8px solid #1f386e;
     box-shadow: 1px 2px 5px black;
     margin: 0px auto;
 }
@@ -164,6 +164,26 @@ nav a:hover {
     /* just a wayfinding symbol for the user */
 }
 
+.contact-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: var(--color-footer);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 2rem;
+    text-decoration: none;
+}
+
+.contact-btn:hover {
+    background: var(--color-accent);
+    transform: translateY(-2px);
+    color: #1f386e;
+}
 
 main {
     align-items: center;
@@ -231,9 +251,10 @@ main {
 .welcome-class p {
     text-align: left;
     font-size: 1.4rem;
-    line-height: var(--font-size-lg);
+    line-height: 1.5rem;
     word-spacing: .1rem;
     letter-spacing: .1rem;
+    color: #f9f8f5;
 }
 
 
@@ -245,12 +266,14 @@ main {
     grid-template-rows: auto;
     max-width: 900px;
     margin: auto;
+    background-color: #3a556d;
 }
 
 .container {
     display: block;
     margin: auto;
-    max-width: 500px;
+    /* max-width: 500px; */
+    width: 100%;
     padding-top: 2px;
 }
 
@@ -267,15 +290,17 @@ main {
 
 .container h2 {
     padding: 1rem 1rem;
+    color: #f9f8f5;
 }
 
 
 form {
-    background: #fff;
+    /* background: #fff; */
+    background-color: #243447;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 340px;
     margin: auto;
 }
 
@@ -283,6 +308,7 @@ label {
     display: block;
     margin-bottom: 2px;
     font-weight: bold;
+    color: #f9f8f5;
 }
 
 input[type="text"],
@@ -290,9 +316,16 @@ input[type="number"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 2px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 4px;
     box-sizing: border-box;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.275),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffffff;
 }
 
 button {
@@ -302,7 +335,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    margin-right: 10px;
+    margin: 1rem auto;
     width: 100%;
 }
 
@@ -310,6 +343,8 @@ button:hover {
     background-color: #121413;
     color: wheat;
 }
+
+
 
 #namedemo,
 #total,
@@ -326,7 +361,10 @@ button:hover {
 #shelvesDemo,
 #hightDemo,
 #doorsDemo,
-#connectionDemo {
+#connectionDemo,
+#total_board,
+#quantityDemoTables,
+#tableInnerBrase {
     background: #fff;
     padding: 10px;
     border-radius: 5px;
@@ -339,6 +377,7 @@ button:hover {
 
 #namedemo {
     font-weight: bold;
+    color: #333;
 }
 
 #total,
@@ -355,18 +394,35 @@ button:hover {
 #shelvesDemo,
 #hightDemo,
 #doorsDemo,
-#connectionDemo {
+#connectionDemo,
+#total_board,
+#quantityDemoTables,
+#tableInnerBrase {
     color: #555;
 }
 
+#lenghDemo {
+    color: #F9F8F5;
+    padding-top: 0;
+}
+
+
 
 .result-class {
-    background-color: #ddd;
+    /* background-color: #ddd; */
+    background-color: #243447;
     box-shadow: 1px 2px 3px black;
     margin-bottom: 2rem;
     padding: 1rem 1rem;
-    width: 375px;
-    max-width: 400px;
+    max-width: 350px;
+    display:block;
+    margin: auto;
+}
+
+.result-class img {
+    /* max-width: 250px; */
+    width: 100%;
+    height: 5%;
 }
 
 
@@ -406,8 +462,47 @@ button:hover {
 
 div {
     margin-bottom: 10px;
+    color: #f5f9f8;
 }
 
+.dispW {
+    margin: auto;
+    text-align: center;
+}
+
+.wardrobImageD {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 2rem;
+    margin: auto;
+}
+
+
+.wardrobImageD img {
+    width: 100%;
+}
+#wardrobHead{
+    color:rgba(2, 2, 1, 0.591);
+    text-align: center;
+    margin: auto;
+}
+
+
+.wardDisplayI {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 2rem;
+    margin: auto;
+    /* background: rgb(188, 188, 188); */
+}
+
+
+.wardDisplayI img {
+    width: 100%;
+    height: auto;
+}
 /* BLOG STYLE IN IMAGE SLIDER STARTS HERE  */
 .display-slid-content {
     background-color: var(--color-footer);
@@ -487,13 +582,17 @@ footer {
     text-align: center;
     padding: 10px 0;
     background: var(--color-footer);
-    color: #fff;
+    color: #b5aeae;
     position: relative;
     bottom: 0;
     width: 100%;
 
 }
 
+footer p {
+    font-size: 12px;
+    color: wheat;
+}
 
 
 /* ABOUT PROJECT ID  */
@@ -536,6 +635,7 @@ footer {
     text-align: center;
     padding-left: .1rem;
     letter-spacing: .1rem;
+    color: wheat;
 }
 
 .about-project-content p {

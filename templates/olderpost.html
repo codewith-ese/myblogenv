@@ -41,10 +41,11 @@
     <main>
         <div class="content-container">
             <article>
-                <div class="article-content-full">
+              <h2>Older Posts</h2>
+                <div class="article-older-content">
 
-                  <h2>Posts</h2>
-                  {% for post in posts %}
+                  
+                  {% for post in old_posts %}
                   <div class="post-blog">
 
                   {% if post['image'] %}
@@ -58,7 +59,7 @@
                       <small>Posted by: {{ post['author'] }} on {{ post['created_at'] }}</small>
                   </div>
                   {% endfor %}
-                  <a href="{{ url_for('olderpost')}}">More Blog</a>
+
                 </div>
             </article>
             
@@ -70,7 +71,7 @@
                 <h3>Recent Posts</h3>
                 
 
-                     {% for post in posts %}
+                     {% for post in old_posts %}
                       <div class="post-blog">
                           <h4>➡️<a href="/post/{{ post['id'] }}">{{ post['title'] }}</a></h4>
                          

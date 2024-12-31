@@ -17,6 +17,7 @@
     <script src="static/scripts/nav.js" defer></script>
     <script src="static/scripts/mabel-scripts.js" defer></script>
     <script src="static/scripts/table-scripts.js" defer></script>
+    <script src="static/scripts/stool-scripts.js" defer></script>
     <script src="static/scripts/blog-comment.js" defer></script>
     <script src="static/scripts/get-date.js" defer></script>
     <script src="static/scripts/readmore.js" defer></script>
@@ -38,7 +39,7 @@
     <main>
         <div class="form-grid">
             <div class="container">
-                <h1>Enter the size of your table or stool below. ⬇️</h1>
+                <h1>Enter the size of your table below. ⬇️</h1>
                 <form id="tableForm" class="mf2">
                     <label for="projectName">Project Name:</label>
                     <input type="text" id="projectName" required>
@@ -56,6 +57,10 @@
                     <label for="tablehight">Stool Height (cm):</label>
                     <input type="number" id="tablehight" required>
                     <br><br>
+
+                    <label for="tablequantity">Stool Quantity:</label>
+                    <input type="number" id="tablequantity" required>
+                    <br><br>
                     
                     <button type="submit">Calculate Total Cost</button>
                 </form>
@@ -68,12 +73,17 @@
                     <div id="tableLegs">Table Legs</div>
                     <div id="tableConnL">Connections</div>
                     <div id="tableConnS">Connnections</div>
+                    <div id="tableInnerBrase">Inner Brase Connection</div>
+                    <div id="quantityDemoTables">Total Quantity</div>
                     <div id="date">Date</div>
                     <br>
                     <hr>
                     <div id="author">Created by EME </div> 
                 </div>
                 <button id="printResultsButton">Print Results</button>
+                <div class="wardDisplayI">
+                    <div id="woodStoolDemo">Stool Image </div>
+                </div>
             </div>
         </div>
     </main>

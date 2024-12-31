@@ -28,8 +28,6 @@ document.getElementById("marbleForm").addEventListener("submit", function(event)
             mesurements++;
         }
 
-
-
         // Clear inputs for next measurement
         document.getElementById("length").value = '';
         document.getElementById("width").value = '';
@@ -59,8 +57,6 @@ document.getElementById("marbleForm").addEventListener("submit", function(event)
     document.getElementById("listCount").innerHTML = " Marble Quantity: " + mesurements;
     document.getElementById("author").innerHTML = " Author: " + author;
 });
-
-
 
 
 // THIS CODE WILL PRINT THE RESULT PAGE 
@@ -102,3 +98,4 @@ document.getElementById("printResultsButton").addEventListener("click", function
     // Print the results
     printWindow.print();
 });
+
