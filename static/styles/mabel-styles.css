@@ -364,7 +364,14 @@ button:hover {
 #connectionDemo,
 #total_board,
 #quantityDemoTables,
-#tableInnerBrase {
+#tableInnerBrase,
+#totalTopQuantity,
+#tableQuantity,
+#totalTableLegs,
+#totalConnA,
+#totalConnB,
+#totalInnerBrase,
+#quantityDemoTables {
     background: #fff;
     padding: 10px;
     border-radius: 5px;
@@ -397,7 +404,14 @@ button:hover {
 #connectionDemo,
 #total_board,
 #quantityDemoTables,
-#tableInnerBrase {
+#tableInnerBrase, 
+#tableQuantity,
+#totalTopQuantity,
+#totalTableLegs,
+#totalConnA, 
+#totalConnB,
+#totalInnerBrase,
+#quantityDemoTables {
     color: #555;
 }
 

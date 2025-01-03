@@ -148,5 +148,6 @@ if __name__ == '__main__':
     # Ensure the upload directory exists
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     app.run(debug=True)
-    
+  
+  
 
