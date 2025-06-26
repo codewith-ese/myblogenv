@@ -49,9 +49,9 @@ document.getElementById("wardrobForm").addEventListener("submit", function(event
     // Display results
     document.getElementById("namedemo").innerHTML = 
         "Project Name: ➡️ " + projectName.charAt(0).toUpperCase() + projectName.slice(1);
-    document.getElementById("shelvesDemo").innerHTML = "Horizontal shelves  ➡️ : " + lengthWdisplay + " " + "cm (6 Piece)";
-    document.getElementById("hightDemo").innerHTML = "Book shelve Side  ➡️ : " + newHight + " cm (2 Pieces)";
-    document.getElementById("topCoverDemo").innerHTML = " Book shelve Top Cover ➡️ : " + topCoverDisplay  + " cm (1 Piece)";
+    document.getElementById("shelvesDemo").innerHTML = "Bookshelf Horizontal shelves  ➡️ : " + lengthWdisplay + " " + "cm (6 Piece)";
+    document.getElementById("hightDemo").innerHTML = " Bookshelf Side  ➡️ : " + newHight + " cm (2 Pieces)";
+    document.getElementById("topCoverDemo").innerHTML = " Bookshelf Top Cover ➡️ : " + topCoverDisplay  + " cm (1 Piece)";
     document.getElementById("connectionDemo").innerHTML = "Top and Bottom Padding Connection ➡️ : " + connectionDownTop + " by" + " 9.5  cm (4 Pieces)";
     document.getElementById("total_board").innerHTML = "Total Estimate is ➡️ : " + round_total  + " boards";
     document.getElementById("date").innerHTML = "Date: " + formattedDate; // Display the date
