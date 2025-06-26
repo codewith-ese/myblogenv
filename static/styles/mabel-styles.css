@@ -1,5 +1,7 @@
 :root {
     /* Generic */
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
     --color-primary: #654534;
     --color-primary-light: #7e57c2;
     --color-primary-dark: #5e35b1;
@@ -187,7 +189,7 @@ nav a:hover {
 
 main {
     align-items: center;
-    background-color: #fff;
+    background-color:var(--bg-primary);
     padding: 5px;
     color: #1f386e;
     
@@ -371,7 +373,8 @@ button:hover {
 #totalConnA,
 #totalConnB,
 #totalInnerBrase,
-#quantityDemoTables {
+#quantityDemoTables,
+#topCoverDemo {
     background: #fff;
     padding: 10px;
     border-radius: 5px;
@@ -411,7 +414,8 @@ button:hover {
 #totalConnA, 
 #totalConnB,
 #totalInnerBrase,
-#quantityDemoTables {
+#quantityDemoTables,
+#topCoverDemo {
     color: #555;
 }
 
@@ -420,6 +424,9 @@ button:hover {
     padding-top: 0;
 }
 
+#author {
+    color: #1bed4c;
+}
 
 
 .result-class {
@@ -552,7 +559,7 @@ div {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.396);
     margin: .2rem auto;
     display: block;
-    border: 1px solid #244283e8;
+    border: none;
 
 }
 
@@ -656,7 +663,7 @@ footer p {
     margin: 0;
     font-size: var(--font-size-md);
     padding: .2rem;
-    color: wheat;
+    color: #f5f9f8; /* color: wheat; */
     text-align: center;
     letter-spacing: .1rem;
 }
@@ -701,7 +708,7 @@ footer p {
 }
 
 figure {
-    background-color: #fff;
+    background-color: var(--bg-secondary); /* #fff;*/
     padding: 10px;
     display: block;
     align-items: center;
@@ -715,7 +722,7 @@ figure img {
 figcaption {
     font-size: var(--fontSizeMd);
     text-align: left;
-    color: #4d4d4d;
+    color: #ffffff; /* #4d4d4d; */
     font-weight: bold;
     padding: 0 1rem;
 }

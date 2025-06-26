@@ -17,6 +17,7 @@
     <script src="static/scripts/nav.js" defer></script>
     <script src="static/scripts/mabel-scripts.js" defer></script>
     <script src="static/scripts/wardrob-scripts.js" defer></script>
+    <script src="static/scripts/book-shelves-scripts.js" defer></script>
     <script src="static/scripts/blog-comment.js" defer></script>
     <script src="static/scripts/get-date.js" defer></script>
     <script src="static/scripts/readmore.js" defer></script>
@@ -39,7 +40,7 @@
     <main>
         <div class="form-grid">
             <div class="container">
-                <h1>Enter the size of your wardrobe below. ⬇️</h1>
+                <h1>Enter the size of your Book shelves below. ⬇️</h1>
                 <form id="wardrobForm" class="mf2">
                     <label for="projectName">Project Name:</label>
                     <input type="text" id="projectName" required>
@@ -58,18 +59,11 @@
                     <input type="number" id="wardhight" required>
                     <br><br>
 
-                    <label for="warddemacation">Number of  Demacation (cm):</label>
+                    <!--<label for="warddemacation">Number of  Demacation (cm):</label>
                     <input type="number" id="warddemacation" required>
-                    <br><br>
+                    <br><br>-->
 
-                    <label for="warddoors">Number of  Doors (cm):</label>
-                    <input type="number" id="warddoors" required>
-                    <br><br>
 
-                    <label for="warddrawers">Number of  Drawers (cm):</label>
-                    <input type="number" id="warddrawers" required>
-                    <br><br>
-                    
                     <button type="submit">Calculate Total Cost</button>
                 </form>
             </div>
@@ -79,7 +73,6 @@
                     <div id="namedemo">Project Name Will Show here</div>
                     <div id="shelvesDemo">Shelves  </div>
                     <div id="hightDemo">Complete Height</div>
-                    <div id="doorsDemo"> Doors </div>
                     <div id="topCoverDemo"> Top COVER </div>
                     <div id="total_board">Board Quantity</div>
                     <div id="connectionDemo">Padding Connnections</div>
@@ -90,11 +83,10 @@
                 </div>
                 <button id="printResultsButton">Print Results</button>
                 <div class="wardDisplayI">
-                    <div id="woodDemo">Wardrobe Shelves Wood</div>
+                    <div id="woodDemo">Book Shelves Wood</div>
                     <div id="lenghtDemo">lenght</div>
-                    <div id="wood3Demo">Wardrobe  Side </div>
-                    <div id="only_heightDemo">Wardrobe  Side/ height Label</div>
-                    <div id="woodDoorsDemo"> Doors </div>
+                    <div id="wood3Demo">Side </div>
+                    <div id="only_heightDemo">Book shelves Side/ height Label</div>
                 </div>  <!-- This will display image  to provide more clearity to the cutting list-->
             </div>
         </div>
@@ -102,13 +94,13 @@
          <div class="dispW">
             <h3 id="#wardrobHead"> Furnitrue Images </h3>
             <div class="wardrobImageD">
-                <!--<div id="shelvesDemo"><a href="#"> <img src="/static/images/w1.png" alt=" Eseinone Code Hub W1 image" loading="lazy" width="400px" height="300px"></a></div>
+                <!--<div id="shelvesDemo"><a href="#"> <img src="/static/images/wood1.png" alt=" Eseinone Code Hub W1 image" loading="lazy" width="400px" height="300px"></a></div>
                 <a href="#"> <img src="/static/images/w2.png" alt=" Eseinone Code Hub W2 image" loading="lazy" width="400px" height="300px"></a>           
                 <a href="#"> <img src="/static/images/w4.png" alt=" Eseinone Code Hub W2 image" loading="lazy" width="400px" height="300px"></a>           
                 <a href="#"> <img src="/static/images/w8.png" alt=" Eseinone Code Hub W2 image" loading="lazy" width="400px" height="300px"></a>           
                 <a href="#"> <img src="/static/images/w10.png" alt=" Eseinone Code Hub W2 image" loading="lazy" width="400px" height="300px"></a>           
                 <a href="#"> <img src="/static/images/w5.png" alt=" Eseinone Code Hub W2 image" loading="lazy" width="400px" height="300px"></a> 
-                <img id="woodImage" src="/static/images/wood1.png" alt=" Eseinone Code Hub W2 image" loading="lazy" width="400px" height="300px">-->         
+                <img id="woodImage" src="/static/images/wood1.png" alt=" Eseinone Code Hub W2 image" loading="lazy" width="400px" height="300px"> -->      
             </div>
          </div>
 
@@ -132,7 +124,6 @@
     </footer>
 </body>
 </html>
-
 
 
 

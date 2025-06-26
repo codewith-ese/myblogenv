@@ -200,7 +200,7 @@
     
     figure p {
         font-size: var(--gutterMd);
-        color: #666;
+        color: #667;
         padding-top: 1rem;
         line-height: 1.6rem;
     }
@@ -322,13 +322,13 @@
         line-height: 1.2rem;
         text-align: left;
         padding: auto;
-        color: wheat;
+        color: #FFF;
         padding: .5rem;
         
     
     }
     figure {
-        padding: 2px;
+        padding: 5px;
     
     }
     
@@ -336,7 +336,7 @@
     figcaption {
         font-size: var(--fontSizeMd);
         text-align: left;
-        color: #4d4d4d;
+        color: #ffffff;
         font-weight: bold;
         line-height: 1.5rem;
         padding: .1rem;

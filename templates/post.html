@@ -33,6 +33,7 @@
             <a href="{{ url_for('wood_calculator')}}">Wood</a>
             <a href="{{ url_for('table_cal')}}">Table</a>
             <a href="{{ url_for('wardrob_cal')}}">Wardrobe</a>
+            <a href="{{ url_for('book_shelves_cal')}}">book_shelves_cal</a>
             <a href="{{ url_for('blogpost')}}"> Blog</a>
         </nav>
     </header>
@@ -97,47 +98,23 @@
     </main>
 
     <footer>
-        <p>&copy; <span id="year"></span> EseinoneCode-Hub - Blog Admin</p>
         <p id="year"></p> 
-        <p id="date-modified"></p>
+        <!--<p id="date-modified"></p>-->
+        <!-- new footer  code -->
+        <div style="margin-bottom: 2px; font-size: 12px;">
+            <a href="https://www.linkedin.com/in/monday-eseinone" target="_blank" style="color: #b5aeae; margin-right: 15px; text-decoration: none;">
+              <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 16px; vertical-align: middle;"> LinkedIn
+            </a>
+            <a href="mailto:eseinonecodehub@gmail.com" style="color: #b5aeae; text-decoration: none;">
+              <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width: 16px; vertical-align: middle;"> Email
+            </a>
+          </div>
+          <div style="margin-bottom: 10px; font-size: 12px">
+            <a href="/privacy-policy" style="color: #b5aeae; margin-right: 15px; text-decoration: none;">Privacy Policy</a>
+            <a href="/terms-of-use" style="color: #b5aeae; text-decoration: none;">Terms of Use</a>
+          </div>
     </footer>
 </body>
 </html>
 
 
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ post['title'] }}</title>
-</head>
-<body>
-    <h1>{{ post['title'] }}</h1>
-    <p>{{ post['content'] }}</p>
-    <small>Posted on: {{ post['created_at'] }}</small>
-    <hr>
-    
-    <h2>Comments</h2>
-    <form action="" method="post">
-        <input type="text" name="author" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required> 
-        <textarea name="content" placeholder="Your Comment" required></textarea>
-        <button type="submit">Submit Comment</button>
-    </form>
-    
-
-    <h3>All Comments:</h3>
-    {% for comment in comments %}
-        <div>
-
-            <h1>{{ post['title'] }}</h1>
-            <p>{{ post['content'] }}</p>
-            <small>Posted by: {{ post['author'] }} on {{ post['created_at'] }}</small> 
-            <hr>
-        </div>
-    {% endfor %}
-    
-    <a href="/">Back to Home</a>
-</body>
-</html>-->

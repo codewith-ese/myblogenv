@@ -21,7 +21,7 @@ def create_user(username, password):
     
     
 app = Flask(__name__)
-app.secret_key = 'codehub_secret_key_ese'  # Change this to a random secret key
+app.secret_key = 'codehub_secret_key_ese'  # This is to be Changed to a random secret key
 
 # Configure the upload folder
 app.config['UPLOAD_FOLDER'] = 'uploads/images'  # Directory to save uploaded images
@@ -73,7 +73,7 @@ def post(post_id):
         author = request.form['author']
         email = request.form['email']
         content = request.form['content']
-        conn.execute('INSERT INTO comments (post_id, author, email, content) VALUES (?, ?, ?, ?)', (post_id, author.title(), email, content.title()))
+        conn.execute('INSERT INTO comments (post_id, author, email, content) VALUES (?, ?, ?, ?)', (post_id, author.title(), email, content.lower()))
         conn.commit()
         return redirect(f'/post/{post_id}')
     
@@ -138,6 +138,11 @@ def table_cal():
 def wardrob_cal():
     
     return render_template("wardrob_cal.html")
+
+@app.route('/book_shelves_cal')
+def book_shelves_cal():
+    
+    return render_template("book_shelves_cal.html")
 
 @app.route('/marble_cal')
 def marble_cal():
