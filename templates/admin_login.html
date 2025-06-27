@@ -1,76 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Admin Login - Marble Cost Estimator">
-    <meta name="author" content="Monday Erirore Eseinone">
-    <title>Admin Login - Marble Cost Estimator</title>
+<!-- templates/admin_login.html -->
+{% extends "base.html" %}
 
-    <!-- Consolidated CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/blog-styles.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mabel-styles.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mabel-large-styles.css')}}">
+{% block title %}Admin Login{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <h2>Admin Login</h2>
     
-    <!-- Favicon -->
-    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico')}}">
-</head>
-<body>
-    <header>
-        <h1>Marble Cost Estimator Admin</h1>
-        <button type="button" id="menu"></button>
-        <nav class="navigation">
-            <a href="{{ url_for('index')}}">Home</a>
-            <a href="{{ url_for('wood_calculator')}}">Wood Calculator</a>
-            <a href="{{ url_for('table_cal')}}">Table Calculator</a>
-        </nav>
-    </header>
-
-    <main class="admin-login-container">
-        <div class="login-card">
-            <h2>Admin Login</h2>
-            
-            <!-- Flash Messages -->
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    <div class="flash-messages">
-                        {% for category, message in messages %}
-                            <div class="alert alert-{{ category }}">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            {% endwith %}
-
-            <form method="POST" action="{{ url_for('admin_login') }}" class="login-form">
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required class="form-control">
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required class="form-control">
-                </div>
-                
-                <button type="submit" class="btn-login">Login</button>
-            </form>
+    <form method="POST" action="{{ url_for('admin_login') }}">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
         </div>
-    </main>
-
-    <footer>
-        <p id="year"></p> 
-        <p id="date-modified"></p>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="{{ url_for('static', filename='scripts/get-date.js')}}" defer></script>
-    <script src="{{ url_for('static', filename='scripts/nav.js')}}" defer></script>
-</body>
-</html>
+        
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        
+        <button type="submit" class="btn-login">Login</button>
+    </form>
+</div>
+{% endblock %}
 
 
-
-
-   

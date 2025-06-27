@@ -85,7 +85,7 @@ def admin_logout():
     return redirect(url_for('index'))
 
 # Helper function to create users (for testing)
-@app.route('/create_user', methods=['POST'])
+@app.route('/create_user', methods=['POST']) 
 def create_user():
     username = request.form.get('username')
     password = request.form.get('password')
