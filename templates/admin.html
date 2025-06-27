@@ -45,49 +45,84 @@
                     <hr>
                 </div>
                 {% endfor %}
-                    <!--{% for post in posts %}
-                    <div class="post">
-                        <h3><a href="/post/{{ post['id'] }}">{{ post['title'] }}</a></h3>
-                        <p>{{ post['content'][:100] }}...</p>
-                        <small>Posted by: {{ post['author'] }} on {{ post['created_at'] }}</small>
-                
-                        {% if post['image'] %}
-                            <div>
-                                <h4>Image:</h4>
-                                <img src="{{ url_for('static', filename='uploads/images/' + post['image']) }}" alt="Post Image" style="max-width: 100%; height: auto;">
-                            </div>
-                        {% endif %}
-                        <hr>
-                    </div>-->
-                
-                    <!-- POST MANAGER STARTS HERE -->
-                    
-                        <!--<section id="dashboard">
-                            <h2>Dashboard</h2>
-                            <p>Total Posts: <span id="postCount">0</span></p>
-                            <p>Total Comments: <span id="commentCount">0</span></p>
-                        </section>
 
-                        <section id="postManagement">
-                            <h2>Manage Posts</h2>
-                            <button id="addPostBtn">Add New Post</button>
-                            <div id="postsList"></div>
-                        </section>
-
-                        <section id="commentsManagement">
-                            <h2>Manage Comments</h2>
-                            <div id="commentsList"></div>
-                        </section>-->
-  
-            <!--{% endfor %}-->
             </section>
 
             <!--<a href="blog.html">Blog Post</a>-->
             <a  href="{{ url_for('blogpost')}}"> Blog Post </a>
         </div>
     </main>
+
+
+    <!-- new code -->
+    <div class="container mt-4">
+        <h2>Admin Dashboard</h2>
+        
+        <!-- User Creation Form -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Create New User</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('create_user') }}">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="is_admin" name="is_admin">
+                        <label class="form-check-label" for="is_admin">Admin User</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create User</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Existing Users Table -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Existing Users</h4>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Created At</th>
+                            <th>Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <td>{{ user['id'] }}</td>
+                            <td>{{ user['username'] }}</td>
+                            <td>{{ user['created_at'] }}</td>
+                            <td>{% if user['is_admin'] %}Yes{% else %}No{% endif %}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Posts Management (your existing content) -->
+        <!-- ... -->
+
+        <!-- Logout Button -->
+        <div class="text-end mt-4">
+            <a href="{{ url_for('admin_logout') }}" class="btn btn-danger">Logout</a>
+        </div>
+    </div>
     <footer>
         <p>&copy; <span id="year"></span> My Blog Admin</p>
     </footer>
 </body>
 </html>
+
+

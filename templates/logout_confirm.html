@@ -1,0 +1,16 @@
+<!-- templates/logout_confirm.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body text-center">
+            <h3>Are you sure you want to logout?</h3>
+            <div class="mt-4">
+                <a href="{{ url_for('admin_logout') }}" class="btn btn-danger me-2">Yes, Logout</a>
+                <a href="{{ url_for('admin') }}" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

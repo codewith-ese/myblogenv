@@ -1,0 +1,238 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog about the Marble Cost Estimator project, featuring tips and insights.">
+    <meta name="author" content="Monday Erirore Eseinone">
+    <title>Blog - Marble Cost Estimator</title>
+
+    <!--<link rel="stylesheet" href="statics/admin-styles.css">-->
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename ='styles/admin-styles.css')}}">-->
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename ='styles/admin-styles-large.css')}}">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/blog-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/mabel-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/mabel-large-styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='styles/image-slide.css')}}">
+    <script src="scripts/admin-script.js" defer></script>
+
+
+    <script src="static/scripts/nav.js" defer></script>
+    <script src="static/scripts/mabel-scripts.js" defer></script>
+    <script src="static/scripts/image-slide.js" defer></script>
+    <script src="static/scripts/blog-comment.js" defer></script>
+    <script src="static/scripts/get-date.js" defer></script>
+    <script src="static/scripts/readmore.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <h1>Marble Cost Estimator Blog</h1>
+        <button type="button" id="menu"></button>
+        <nav class="navigation">
+          <a href="{{ url_for('index')}}" class="active">Home</a>
+          <a href="{{ url_for('wood_calculator')}}">Wood</a>
+          <a href="{{ url_for('table_cal')}}">Table Calculate</a>
+          <a href="{{ url_for('blogpost')}}"> Blog</a>
+        </nav>
+    </header>
+    <main>
+        <div class="content-container">
+            <article>
+                <div class="article-content-full">
+                    <h1>Admin Login</h1>
+                    <form method="POST" action="{{ url_for('admin_login') }}">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                        <br>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <br>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                    <p>{{msg}}</p>     
+                {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                    
+                    {{  mesage }}
+        
+            </article>
+        </div>
+
+        <section>
+            <div class="display-slid-content">
+                <div class="image-slider">
+                    
+                    <h2 style="text-align:center">Slideshow Gallery</h2>
+                    <div class="slider-container">
+                      <div class="slide">
+                        <div class="numbertext">1 / 6</div>
+                        <img src="static/images/img_woods.webp" alt="mable1 image">
+                      </div>
+                    
+                      <div class="slide">
+                        <div class="numbertext">2 / 6</div>
+                        <img src="static/images/img_woods2.webp" alt="mable2 image">
+                      </div>
+                    
+                      <div class="slide">
+                        <div class="numbertext">3 / 6</div>
+                        <img src="static/images/img_woods3.webp" alt="mable3 image">
+                      </div>
+                        
+                      <div class="slide">
+                        <div class="numbertext">4 / 6</div>
+                        <img src="static/images/img_woods4.webp" alt="mable4 image">
+                      </div>
+                    
+                      <div class="slide">
+                        <div class="numbertext">5 / 6</div>
+                        <img src="static/images/img_woods5.webp" alt="mable5 image">
+                      </div>
+                        
+                      <div class="slide">
+                        <div class="numbertext">6 / 6</div>
+                        <img src="static/images/img_woods6.webp" alt="mable6 image">
+                      </div>
+                        
+                      <a class="prev" onclick="changeSlide(-1)">❮</a>
+                      <a class="next" onclick="changeSlide(1)">❯</a>
+                    
+                      <div class="caption-container">
+                        <p id="caption"></p>
+                      </div>
+                    
+                      <div class="row">
+                        <div class="column">
+                          <img class="thumbnail cursor" src="static/images/img_woods.webp" style="width:100%" onclick="setCurrentSlide(1)" alt="mable1 image" loading="lazy">
+                        </div>
+                        <div class="column">
+                          <img class="thumbnail cursor" src="static/images/img_woods2.webp" style="width:100%" onclick="setCurrentSlide(2)" alt="mable2 image" loading="lazy">
+                        </div>
+                        <div class="column">
+                          <img class="thumbnail cursor" src="static/images/img_woods3.webp" style="width:100%" onclick="setCurrentSlide(3)" alt="mable3 image" loading="lazy">
+                        </div>
+                        <div class="column">
+                          <img class="thumbnail cursor" src="static/images/img_woods4.webp" style="width:100%" onclick="setCurrentSlide(4)" alt="mable4 image" loading="lazy">
+                        </div>
+                        <div class="column">
+                          <img class="thumbnail cursor" src="static/images/img_woods5.webp" style="width:100%" onclick="setCurrentSlide(5)" alt="mable5 image" loading="lazy">
+                        </div>    
+                        <div class="column">
+                          <img class="thumbnail cursor" src="static/images/img_woods6.webp" style="width:100%" onclick="setCurrentSlide(6)" alt="mable6 image" loading="lazy">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="social-link">
+                    <h2>Social links </h2>
+                    <ul>
+                        <li> Facebook </li>
+                        <li> Instagram </li>
+                        <li> Twiter </li>
+                        <li> Linkdin </li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="comments-section">
+            <h2>Comments</h2>
+            <form onsubmit="submitComment(event)">
+                <textarea id="commentInput" placeholder="Leave a comment..." required></textarea>
+                <button type="submit">Submit Comment</button>
+            </form>
+            <div id="commentDisplay"></div>
+        </section>
+    </main>
+    <footer>
+        <p id="year"></p> 
+        <p id="date-modified"></p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+<!-- templates/admin.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Admin Dashboard</h2>
+    
+    <!-- User Creation Form -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Create New User</h4>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{ url_for('create_user') }}">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="is_admin" name="is_admin">
+                    <label class="form-check-label" for="is_admin">Admin User</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Create User</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Existing Users Table -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Existing Users</h4>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Created At</th>
+                        <th>Admin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user['id'] }}</td>
+                        <td>{{ user['username'] }}</td>
+                        <td>{{ user['created_at'] }}</td>
+                        <td>{% if user['is_admin'] %}Yes{% else %}No{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Posts Management (your existing content) -->
+    <!-- ... -->
+
+    <!-- Logout Button -->
+    <div class="text-end mt-4">
+        <a href="{{ url_for('admin_logout') }}" class="btn btn-danger">Logout</a>
+    </div>
+</div>
+{% endblock %}
